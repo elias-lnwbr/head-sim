@@ -3,3 +3,4 @@
 Membres :
 Elias Leinenweber
 Matthieu Berg
+François Foltête
