@@ -1,4 +1,4 @@
-#include "Actor.hpp"
+#include "Actor.h"
 
 /**
  * @brief Set name of actor.
