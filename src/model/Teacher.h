@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor.hpp"
+#include "Actor.h"
 
 class Teacher : Actor {
 };

@@ -1,7 +1,7 @@
 #include <vector>
 
-#include "Student.hpp"
-#include "Teacher.hpp"
+#include "Student.h"
+#include "Teacher.h"
 
 class Class {
 private:
