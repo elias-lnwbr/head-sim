@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "model/Actor.hpp"
+#include "model/Actor.h"
 
 int
 main(int argc, char *argv[])
