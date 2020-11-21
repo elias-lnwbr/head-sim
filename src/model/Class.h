@@ -1,10 +1,13 @@
-#include <vector>
+#ifndef CLASS_H
+#define CLASS_H
 
-#include "Student.h"
-#include "Teacher.h"
+class Student;
+class Teacher;
 
 class Class {
 private:
-	std::vector<Student *> students;
-	Teacher &teacher;
+    std::vector<Student *> students;
+    Teacher &teacher;
 };
+
+#endif

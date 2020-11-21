@@ -1,6 +1,9 @@
-#pragma once
+#ifndef TEACHER_H
+#define TEACHER_H
 
-#include "Actor.h"
+class Actor;
 
 class Teacher : Actor {
 };
+
+#endif

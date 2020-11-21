@@ -1,11 +1,24 @@
-#pragma once
-
-#include <string>
+#ifndef ACTOR_H
+#define ACTOR_H
 
 class Actor {
 private:
-	std::string name;
+    std::string name;
+
 public:
-	void setName(std::string);
-	std::string getName();
+    /**
+     * @brief Modifie le nom de l'acteur.
+     * 
+     * @param name le nouveau nom de l'acteur
+     */
+    void setName(std::string);
+
+    /**
+     * @brief Renvoie le nom de l'acteur.
+     * 
+     * @return std::string le nom de l'acteur
+     */
+    std::string getName();
 };
+
+#endif
