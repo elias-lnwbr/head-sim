@@ -25,7 +25,7 @@ main()
 
     /* Chargement des ressources, initialisation des états OpenGL... */
     sf::Font font;
-    if (!font.loadFromFile(RESOURCES_FOLDER "Roboto-Light.ttf"))
+    if (!font.loadFromFile(RESOURCES_FOLDER "fonts/Roboto-Light.ttf"))
         return EXIT_FAILURE;
     sf::Text text;
     text.setFont(font);
