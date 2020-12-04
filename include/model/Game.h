@@ -3,27 +3,55 @@
 
 class Game {
 private:
+    /**
+     * @brief Heure de début de la partie
+     * 
+     */
     time_t startTime;
+
+    /**
+     * @brief Difficulté de la partie
+     * 
+     */
     int difficulty;
+
+    /**
+     * @brief Nom du joueur
+     * 
+     */
     std::string playerName;
 
 public:
     Game() = delete;
+    /**
+     * @brief Construct une nouvelle partie de jeu
+     * 
+     * @param difficulty Difficulté de la partie 
+     * @param playerName Nom du joueur
+     */
     Game(int difficulty, std::string playerName);
+    ~Game();
 
     /**
-     * @brief Set the Player Name object
+     * @brief Set le nom du Joueur
      * 
      * @param playerName 
      */
     void setPlayerName(const std::string &playerName) { this->playerName = playerName; };
 
     /**
-     * @brief Get the Player Name object
+     * @brief Get le nom du joueur
      * 
      * @return std::string 
      */
     std::string getPlayerName() { return playerName; };
+
+    /**
+     * @brief Retourne le temps depuis le lancement de la partie
+     * 
+     * @return time_t 
+     */
+    time_t getDuration();
 };
 
 #endif

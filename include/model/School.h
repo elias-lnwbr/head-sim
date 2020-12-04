@@ -1,27 +1,47 @@
 #ifndef SCHOOL_H
 #define SCHOOL_H
 
-class Class;
+class Classroom;
 
 class School {
+
 private:
+    /**
+     * @brief Nom de l'école
+     * 
+     */
     std::string name;
-    std::vector<Class *> classes;
+
+    /**
+     * @brief Classes dans l'école
+     * 
+     */
+    std::vector<Classroom *> classes;
 
 public:
+    School() = delete;
+    School(std::string name);
+    ~School();
     /**
-     * @brief Set the Name object
+     * @brief Set le nom de l'école
      * 
-     * @param name 
+     * @param name Nom de l'école
      */
     void setName(const std::string &name){ this->name = name; };
 
     /**
-     * @brief Get the Name object
+     * @brief Get le nom de l'école
      * 
-     * @return std::string 
+     * @return std::string Nom de l'école
      */
     std::string getName(){ return this->name; };
+
+    /**
+     * @brief Ajoute une classe à l'école
+     * 
+     * @param classe Classe à ajouter
+     */
+    void addClass(Classroom& classe);
 };
 
 #endif
