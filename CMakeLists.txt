@@ -13,6 +13,9 @@ include_directories(BEFORE include)
 
 set(CMAKE_MODULE_PATH "/usr/share/SFML/cmake/Modules" ${CMAKE_MODULE_PATH})
 find_package(SFML COMPONENTS graphics window system REQUIRED)
-add_executable(${EXECUTABLE_NAME} src/Main.cpp)
+add_executable(${EXECUTABLE_NAME} src/Main.cpp include/imgui/imgui-SFML.cpp
+               include/imgui/imgui-SFML.cpp include/imgui/imgui.cpp
+               include/imgui/imgui_demo.cpp include/imgui/imgui_draw.cpp
+               include/imgui/imgui_widgets.cpp)
 target_link_libraries(${EXECUTABLE_NAME} sfml-graphics sfml-window sfml-system GL)
 file(COPY resources DESTINATION .)

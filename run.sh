@@ -1,4 +1,3 @@
 #!/bin/sh
 
-[ -f ./build/head-sim ] || ./build.sh
-./build/head-sim
+([ -f ./build/head-sim ] || ./build.sh) && ./build/head-sim

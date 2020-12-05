@@ -1,6 +1,11 @@
+#include <iostream>
+
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
 #include <SFML/Window.hpp>
+
+#include "imgui/imgui.h"
+#include "imgui/imgui-SFML.h"
 
 #include "model/Actor.h"
 #include "view/GameWindow.h"
@@ -18,7 +23,12 @@ main()
                             "Headmaster Simulator",
                             sf::Style::Default,
                             sf::ContextSettings(24, 0, 0, 4, 6));
-    window.setVerticalSyncEnabled(false);
+    window.setVerticalSyncEnabled(true);
+
+    ImGui::SFML::Init(window);
+    sf::Color bgColor;
+    float color[3] = { 0.f, 0.f, 0.f };
+    window.resetGLStates();
 
     /* Activation de la fenêtre. */
     window.setActive(true);
@@ -48,6 +58,7 @@ main()
         /* Gestion des évènements. */
         sf::Event event;
         while (window.pollEvent(event)) {
+            ImGui::SFML::ProcessEvent(event);
             if (event.type == sf::Event::Closed) {
                 /* Stoppe le programme. */
                 running = false;
@@ -57,12 +68,28 @@ main()
             }
         }
 
-        /* Effacement des tampons de couleur et de profondeur. */
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        ImGui::SFML::Update(window, clock.restart());
+        ImGui::ShowDemoWindow();
+        ImGui::GetForegroundDrawList()->AddLine(ImVec2(0, 0), ImVec2(1000, 1000), ImColor(ImVec4(1, 1, 1, 1)), 5);
+
+        if (ImGui::Begin("test")) {
+            if (ImGui::Button("coucou"))
+                std::cout << "test" << std::endl;
+            if (ImGui::Button("coucou2"))
+                std::cout << "test" << std::endl;
+            ImGui::Dummy(ImVec2(ImGui::GetContentRegionAvail().x - 200, 0));
+            ImGui::SameLine();
+            if (ImGui::Button("coucou3"))
+                std::cout << "test" << std::endl;
+        }
+
+        ImGui::End();
+        window.clear(bgColor);
 
         /* Dessin. */
         window.draw(line);
         window.draw(text);
+        ImGui::SFML::Render();
 
         /*
          * Termine la trame courante (en interne, échange les deux tampons de
@@ -73,6 +100,7 @@ main()
 
     /* Libération des ressources. */
     window.setActive(false);
+    ImGui::SFML::Shutdown();
 
     return EXIT_SUCCESS;
 }
