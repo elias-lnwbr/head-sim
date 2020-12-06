@@ -1,16 +1,15 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
-#include <SFML/Window.hpp>
-
-class GameWindow : sf::Window {
+/**
+ * @brief La fenêtre principale du jeu.
+ */
+class GameWindow : public sf::RenderWindow {
 public:
     /**
      * @brief Construct a new Game Window object
-     * 
-     * @param title Title of the window
      */
-    GameWindow(const std::string &title);
+    GameWindow();
 };
 
-#endif
+#endif /* GAMEWINDOW_H */

@@ -12,6 +12,8 @@
 
 * [Wiki](https://docs.google.com/document/d/1uz34ZGo5RYvAJapS-wmWnRyThNfZfZ_rFMH4igHZFu0)
 * [SFML](https://www.sfml-dev.org/index-fr.php)
+* [Dear ImGui](https://github.com/ocornut/imgui)
+* [ImGui-SFML](https://github.com/eliasdaler/imgui-sfml)
 
 ## Groupe
 

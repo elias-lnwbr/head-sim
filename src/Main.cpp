@@ -13,7 +13,7 @@
 #define RESOURCES_FOLDER "resources/"
 
 /**
- * Point d'entrée principal.
+ * @brief Point d'entrée principal.
  */
 int
 main()
@@ -26,8 +26,7 @@ main()
     window.setVerticalSyncEnabled(true);
 
     ImGui::SFML::Init(window);
-    sf::Color bgColor;
-    float color[3] = { 0.f, 0.f, 0.f };
+    sf::Color bgColor(0.f, 0.5f, 0.5f, 0.0f);
     window.resetGLStates();
 
     /* Activation de la fenêtre. */
@@ -37,20 +36,9 @@ main()
     sf::Font font;
     if (!font.loadFromFile(RESOURCES_FOLDER "fonts/Roboto-Light.ttf"))
         return EXIT_FAILURE;
-    sf::Text text;
-    text.setFont(font);
-    text.setString("Barre oblique");
-    text.setCharacterSize(24);
-    text.setFillColor(sf::Color::White);
-    text.setStyle(sf::Text::Bold);
-    text.move(50.0f, 250.0f);
 
     /* Démarre le chronomètre. */
     sf::Clock clock;
-
-    sf::RectangleShape line(sf::Vector2f(150, 5));
-    line.rotate(-45);
-    line.move(50.0f, 200.0f);
 
     /* La boucle de jeu principale. */
     bool running = true;
@@ -69,10 +57,8 @@ main()
         }
 
         ImGui::SFML::Update(window, clock.restart());
-        ImGui::ShowDemoWindow();
-        ImGui::GetForegroundDrawList()->AddLine(ImVec2(0, 0), ImVec2(1000, 1000), ImColor(ImVec4(1, 1, 1, 1)), 5);
-
-        if (ImGui::Begin("test")) {
+        if (ImGui::Begin("test", nullptr, ImGuiWindowFlags_NoTitleBar |
+            ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
             if (ImGui::Button("coucou"))
                 std::cout << "test" << std::endl;
             if (ImGui::Button("coucou2"))
@@ -82,13 +68,10 @@ main()
             if (ImGui::Button("coucou3"))
                 std::cout << "test" << std::endl;
         }
-
         ImGui::End();
-        window.clear(bgColor);
 
         /* Dessin. */
-        window.draw(line);
-        window.draw(text);
+        window.clear(bgColor);
         ImGui::SFML::Render();
 
         /*
