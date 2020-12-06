@@ -11,7 +11,7 @@ public:
      * 
      * @param playerName le nom du joueur
      */
-    void newGame(const std::string &playerName);
+    static void newGame(sf::Clock &clock);
 };
 
 #endif /* GAME_H */

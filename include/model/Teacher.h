@@ -1,10 +1,9 @@
 #ifndef TEACHER_H
 #define TEACHER_H
 
-class Actor;
+#include "model/Actor.h"
 
 class Teacher : Actor {
-
 private:
     /**
      * @brief Niveau de pédagogie du prof
@@ -16,7 +15,7 @@ private:
      * @brief Niveau de méritocratie du professeur
      * 
      */
-    double meritrocratic;
+    double meritocratic;
 
 public:
     Teacher() = delete;
@@ -57,7 +56,7 @@ public:
      * 
      * @param meritocratic niveau de méritocratie du professeur
      */
-    void setMeritocratic(double meritocratic){ this->meritrocratic = meritrocratic;}
+    void setMeritocratic(double meritocratic){ this->meritocratic = meritocratic;}
 
 };
 

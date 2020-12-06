@@ -1,3 +1,1 @@
-#include <string>
-
-#include "Class.h"
+#include "model/School.h"

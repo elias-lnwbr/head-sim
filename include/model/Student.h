@@ -1,7 +1,11 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-class Actor;
+#include <map>
+#include <vector>
+
+#include "model/Actor.h"
+
 class Subject;
 class Classroom;
 

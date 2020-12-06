@@ -1,37 +1,23 @@
 #ifndef CLASS_H
 #define CLASS_H
 
+#include <vector>
+
 class Student;
 class Teacher;
 
 class Classroom {
 private:
-    /**
-     * @brief Taille maximum de la classe
-     * 
-     */
-    static const int MAX_SIZE = 50;
-
-    /**
-     * @brief Elèves de la classe
-     * 
-     */
-    std::vector<Student *> students;
-
-    /**
-     * @brief Professeur de la classe
-     * 
-     */
-    Teacher *teacher;
+    static const int MAX_SIZE = 50;  /**< taille maximum de la classe */
+    std::vector<Student *> students; /**< élèves de la classe */
+    Teacher *teacher;                /**< enseignant de la classe */
 public:
-    Classroom() = delete;
-
     /**
      * @brief Construct a new Classroom object
      * 
      * @param teacher Professeur de la classe
      */
-    Classroom(Teacher & teacher);
+    Classroom(Teacher &teacher);
     ~Classroom();
 
     /**
@@ -39,7 +25,7 @@ public:
      * 
      * @return Teacher* 
      */
-    Teacher* getTeacher(){ return this->teacher;}
+    Teacher *getTeacher() { return this->teacher; }
 
     /**
      * @brief Get la liste des élèves

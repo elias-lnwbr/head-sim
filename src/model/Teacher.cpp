@@ -1,2 +1,1 @@
-#include "Actor.h"
-#include "Teacher.h"
+#include "model/Teacher.h"

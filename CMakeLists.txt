@@ -1,21 +1,22 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.19)
 
 # set the project name
-project(HeadmasterSimulator VERSION 1.0 LANGUAGES CXX)
+project(HeadmasterSimulator
+        DESCRIPTION "Simulez un headmaster."
+        HOMEPAGE_URL "https://git.unistra.fr/barre-oblique-v3/t432_sab20_t3_b"
+        LANGUAGES CXX)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(EXECUTABLE_NAME "head-sim")
+file(GLOB SOURCES src/*/*.cpp include/imgui/*.*)
 
-include_directories(BEFORE include)
-
-set(CMAKE_MODULE_PATH "/usr/share/SFML/cmake/Modules" ${CMAKE_MODULE_PATH})
 find_package(SFML COMPONENTS graphics window system REQUIRED)
-add_executable(${EXECUTABLE_NAME} src/Main.cpp include/imgui/imgui-SFML.cpp
-               include/imgui/imgui-SFML.cpp include/imgui/imgui.cpp
-               include/imgui/imgui_demo.cpp include/imgui/imgui_draw.cpp
-               include/imgui/imgui_widgets.cpp)
+include_directories(include)
+link_directories(src include/imgui)
+add_executable(${EXECUTABLE_NAME} src/Main.cpp ${SOURCES})
 target_link_libraries(${EXECUTABLE_NAME} sfml-graphics sfml-window sfml-system GL)
+
 file(COPY resources DESTINATION .)

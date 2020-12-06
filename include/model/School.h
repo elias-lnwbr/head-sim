@@ -1,10 +1,12 @@
 #ifndef SCHOOL_H
 #define SCHOOL_H
 
+#include <string>
+#include <vector>
+
 class Classroom;
 
 class School {
-
 private:
     /**
      * @brief Nom de l'école
