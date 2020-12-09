@@ -3,9 +3,7 @@
 
 #include "controller/Game.h"
 
-/**
- * Point d'entrée principal.
- */
+/** @brief Point d'entrée principal. */
 int
 main()
 {
