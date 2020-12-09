@@ -22,7 +22,7 @@ void
 Game::start()
 {
     /* Crée la fenêtre. */
-    mainWindow = new GameWindow(800, 600);
+    mainWindow = new GameWindow;
 
     addComponent(new MainMenu);
 }

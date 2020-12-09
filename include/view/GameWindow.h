@@ -21,11 +21,8 @@ class GameWindow : public sf::RenderWindow
   public:
     /**
      * @brief Construit une fenêtre de jeu.
-     *
-     * @param width
-     * @param height
      */
-    GameWindow(unsigned int width, unsigned int height);
+    GameWindow();
 
     /**
      * Gestion des évènements.

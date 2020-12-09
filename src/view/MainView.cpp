@@ -13,7 +13,23 @@
 
 MainView::MainView()
 {
-    assert(classroom.loadFromFile("resources/images/salles/salle1.png"));
+    sf::Texture *classroom = new sf::Texture;
+    char path[35];
+
+    sprintf(path, RESOURCES_FOLDER "images/salles/salle1.png");
+    while (classroom->loadFromFile(path)) {
+        classrooms.push_back(classroom);
+        classroom = new sf::Texture;
+        ++path[29]; // grosse magie noire mythique ici.
+    }
+}
+
+MainView::~MainView()
+{
+    while (!classrooms.empty()) {
+        delete classrooms.back();
+        classrooms.pop_back();
+    }
 }
 
 void
@@ -28,7 +44,7 @@ MainView::render() const
         for (int i = 0; i < 4; ++i) {
             if (i > 0 && i % 2 == 0)
                 ImGui::Separator();
-            ImGui::ImageButton(classroom, size);
+            ImGui::ImageButton(*classrooms[i % classrooms.size()], size);
             ImGui::NextColumn();
         }
         ImGui::Columns(1);
