@@ -3,9 +3,9 @@
 
 #include "Component.h"
 
-class MainMenu : Component {
+class MainMenu : public Component {
 public:
-    void render();
+    void render() const;
 };
 
 #endif /* MAINMENU_H */

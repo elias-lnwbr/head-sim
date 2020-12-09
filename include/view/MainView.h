@@ -3,9 +3,9 @@
 
 #include "Component.h"
 
-class MainView : Component {
+class MainView : public Component {
 public:
-    void render();
+    void render() const;
 };
 
 #endif /* MAINVIEW_H */

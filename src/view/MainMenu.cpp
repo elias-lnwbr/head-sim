@@ -12,7 +12,7 @@
 #include "view/MainView.h"
 
 void
-MainMenu::render()
+MainMenu::render() const
 {
     if (ImGui::Begin("Menu principal", nullptr, ImGuiWindowFlags_NoTitleBar |
         ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {

@@ -14,33 +14,37 @@
 #include "view/MainMenu.h"
 #include "view/MainView.h"
 
-GameWindow *Game::mainWindow = nullptr;
+GameWindow              *Game::mainWindow = nullptr;
+bool                     Game::running    = true;
+std::vector<Component *> Game::components = std::vector<Component *>();
 
 void
-Game::start(sf::Clock &clock)
+Game::start()
 {
     /* Crée la fenêtre. */
     mainWindow = new GameWindow(800, 600);
-    MainMenu mainMenu;
 
-    /* La boucle de jeu principale. */
-    bool running = true;
-    while (running) {
-        mainWindow->handleEvents(running);
-
-        ImGui::SFML::Update(*mainWindow, clock.restart());
-        mainMenu.render();
-
-        mainWindow->draw();
-        mainWindow->display();
-    }
+    addComponent(new MainMenu);
 }
 
 void
 Game::newGame()
 {
-    MainView mainView;
-    mainView.render();
+    components.clear();
+    addComponent(new MainView);
+}
+
+void
+Game::loop(sf::Clock &clock)
+{
+    while (running) {
+        mainWindow->handleEvents(running);
+        ImGui::SFML::Update(*mainWindow, clock.restart());
+        for (const Component *component : components)
+            component->render();
+        mainWindow->draw();
+        mainWindow->display();
+    }
 }
 
 void

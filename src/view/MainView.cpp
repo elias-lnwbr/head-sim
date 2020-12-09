@@ -11,7 +11,7 @@
 #include "view/MainView.h"
 
 void
-MainView::render()
+MainView::render() const
 {
     if (ImGui::Begin("École", nullptr, ImGuiWindowFlags_NoTitleBar |
         ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
