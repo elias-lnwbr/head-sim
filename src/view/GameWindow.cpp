@@ -4,7 +4,7 @@
 
 GameWindow::GameWindow(unsigned int width, unsigned int height) :
 sf::RenderWindow(sf::VideoMode(width, height), "Headmaster Simulator",
-                 sf::Style::Default, sf::ContextSettings(24, 0, 0, 4, 6)),
+                 sf::Style::Default),
 background(0.f, 0.f, 0.f)
 {
     setVerticalSyncEnabled(true);

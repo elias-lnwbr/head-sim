@@ -9,33 +9,32 @@
 
 #include "controller/Game.h"
 #include "view/GameWindow.h"
+#include "view/MainMenu.h"
+
+GameWindow *Game::mainWindow = nullptr;
 
 void
 Game::newGame(sf::Clock &clock)
 {
     /* Crée la fenêtre. */
-    GameWindow window(800, 600);
+    mainWindow = new GameWindow(800, 600);
+    MainMenu mainMenu;
 
     /* La boucle de jeu principale. */
     bool running = true;
     while (running) {
-        window.handleEvents(running);
+        mainWindow->handleEvents(running);
 
-        ImGui::SFML::Update(window, clock.restart());
-        if (ImGui::Begin("test", nullptr, ImGuiWindowFlags_NoTitleBar |
-            ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
-            if (ImGui::Button("coucou"))
-                std::cout << "test" << std::endl;
-            if (ImGui::Button("coucou2"))
-                std::cout << "test" << std::endl;
-            ImGui::Dummy(ImVec2(ImGui::GetContentRegionAvail().x - 200, 0));
-            ImGui::SameLine();
-            if (ImGui::Button("coucou3"))
-                std::cout << "test" << std::endl;
-        }
-        ImGui::End();
+        ImGui::SFML::Update(*mainWindow, clock.restart());
+        mainMenu.render();
 
-        window.draw();
-        window.display();
+        mainWindow->draw();
+        mainWindow->display();
     }
+}
+
+void
+Game::end()
+{
+    delete Game::mainWindow;
 }
