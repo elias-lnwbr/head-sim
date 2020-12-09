@@ -1,62 +1,63 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "assert.h"
-
-#include <algorithm>
 #include <vector>
 
 #include "view/Component.h"
 #include "view/GameWindow.h"
 
-/**
- * @brief Le contrôleur du jeu.
- */
+/** @brief Une classe "statique" ("singleton") modélisant le jeu. */
 class Game {
 private:
-    static GameWindow *mainWindow;
-    static bool running;
+    static GameWindow              *mainWindow;
+    static bool                     running;
     static std::vector<Component *> components;
 
 public:
-    /**
-     * @brief Démarre le jeu.
-     */
-    static void start();
+    Game() = delete;
 
-    static void newGame();
+    /** @brief Démarre le jeu. */
+    static void start();
 
     /**
      * @brief La boucle de jeu principale.
-     * 
-     * @param clock 
+     *
+     * @param clock le chronomètre du processus principal
      */
     static void loop(sf::Clock &clock);
 
-    /**
-     * @brief Termine le jeu.
-     */
+    /** @brief Débute une nouvelle partie. */
+    static void newGame();
+
+    /** @brief Termine le jeu. */
     static void end();
 
     /**
-     * @brief Get the Main Window object
-     * 
-     * @return GameWindow& the Main Window object
+     * @brief Renvoie une référence vers la fenêtre principale.
+     *
+     * @return une référence vers la fenêtre principale
      */
-    static GameWindow &getMainWindow() { return *mainWindow; }
+    static GameWindow &getMainWindow();
+
+    /** @brief Donne le signal d'arrêter le jeu. */
+    static void stop();
 
     /**
-     * @brief Stop
+     * @brief Ajoute un composant graphique au jeu.
+     *
+     * @param component un composant graphique
      */
-    static void stop() { running = false; }
+    static void addComponent(Component *component);
 
-    static void addComponent(Component *component) { components.push_back(component); }
+    /**
+     * @brief Supprime un composant graphique du jeu.
+     *
+     * @param component un composant graphique
+     */
+    static void removeComponent(Component *component);
 
-    static void removeComponent(Component *component) {
-        assert(component);
-        components.erase(std::remove(components.begin(), components.end(), component), components.end());
-        delete component;
-    }
+    /** @brief Supprime tous les composants graphiques du jeu. */
+    static void clearComponents();
 };
 
 #endif /* GAME_H */

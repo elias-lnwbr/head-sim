@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 
@@ -18,6 +16,6 @@ main()
     Game::loop(clock);
     Game::end();
 
-    std::cout << "Success" << std::endl;
-    return EXIT_SUCCESS;
+    exit(EXIT_SUCCESS);
+    /* NOTREACHED */
 }

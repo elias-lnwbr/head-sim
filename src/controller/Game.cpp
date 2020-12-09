@@ -1,6 +1,6 @@
 #include "assert.h"
 
-#include <iostream>
+#include <algorithm>
 #include <string>
 
 #include <SFML/Graphics.hpp>
@@ -28,13 +28,6 @@ Game::start()
 }
 
 void
-Game::newGame()
-{
-    components.clear();
-    addComponent(new MainView);
-}
-
-void
 Game::loop(sf::Clock &clock)
 {
     while (running) {
@@ -48,6 +41,13 @@ Game::loop(sf::Clock &clock)
 }
 
 void
+Game::newGame()
+{
+    clearComponents();
+    addComponent(new MainView);
+}
+
+void
 Game::end()
 {
     /*
@@ -57,4 +57,39 @@ Game::end()
     assert(Game::mainWindow);
 
     delete Game::mainWindow;
+    clearComponents();
+}
+
+GameWindow &
+Game::getMainWindow()
+{
+    return *mainWindow;
+}
+
+void
+Game::stop()
+{
+    running = false;
+}
+
+void
+Game::addComponent(Component *component)
+{
+    assert(component);
+    components.push_back(component);
+}
+
+void
+Game::removeComponent(Component *component)
+{
+    assert(component);
+    components.erase(std::remove(components.begin(), components.end(), component), components.end());
+    delete component;
+}
+
+void
+Game::clearComponents()
+{
+    for (Component *component : components)
+        removeComponent(component);
 }
