@@ -43,7 +43,7 @@ public:
      * 
      * @param classe Classe à ajouter
      */
-    void addClass(Classroom& classe);
+    void addClass(Classroom* classe){ classes.push_back(classe);};
 };
 
 #endif

@@ -1,6 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <string>
+
 class Game {
 private:
     /**
@@ -22,7 +24,6 @@ private:
     std::string playerName;
 
 public:
-    Game() = delete;
     /**
      * @brief Construct une nouvelle partie de jeu
      * 
@@ -51,7 +52,7 @@ public:
      * 
      * @return time_t 
      */
-    time_t getDuration();
+    time_t getDuration(){ return time(nullptr) - startTime;};
 };
 
 #endif

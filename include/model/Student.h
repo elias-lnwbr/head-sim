@@ -42,8 +42,6 @@ private:
     double skill; 
     
 public:
-
-    Student() = delete;
     
     /**
      * @brief Construct a new Student object
@@ -70,7 +68,7 @@ public:
      * 
      * @param classroom Classe de l'élève
      */
-    void setClassroom(Classroom &classroom){ this->classroom = &classroom;}
+    void setClassroom(Classroom * classroom){ this->classroom = classroom;}
 
     /**
      * @brief Get l'humeur de l'élève
@@ -91,7 +89,7 @@ public:
      * 
      * @return double motivation de l'élève
      */
-    double getMotivation(){ return this->motivation; }
+    double getMotivation(){ return motivation; }
     
     /**
      * @brief Set la motivation de l'élève
@@ -105,7 +103,7 @@ public:
      * 
      * @return double Qualité de l'élève
      */
-    double getSkill(){ return this->skill;}
+    double getSkill(){ return skill;}
 
     /**
      * @brief Set la qualité de l'élève
@@ -120,7 +118,7 @@ public:
      * @param subject Matière
      * @param grade Note
      */
-    void addGrades(Subject &subject, double grade);
+    void addGrades(Subject *subject, double grade);
 
 };
 

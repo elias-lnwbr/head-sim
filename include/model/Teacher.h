@@ -18,7 +18,7 @@ private:
     double meritocratic;
 
 public:
-    Teacher() = delete;
+
     /**
      * @brief Construct un nouveau Professeur
      * 
@@ -35,7 +35,7 @@ public:
      * 
      * @return double Niveau de pédagogie du professeur
      */
-    double getPedagogue(){ return this->pedagogue;}
+    double getPedagogue(){ return pedagogue;}
     
     /**
      * @brief Set le niveau de pédagogie du professeur
@@ -49,7 +49,7 @@ public:
      * 
      * @return double 
      */
-    double getMeritocratic(){ return this->meritocratic;}
+    double getMeritocratic(){ return meritocratic;}
     
     /**
      * @brief Set le niveau de méritocratie du professeur

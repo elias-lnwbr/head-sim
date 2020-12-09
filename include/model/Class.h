@@ -25,28 +25,28 @@ public:
      * 
      * @return Teacher* 
      */
-    Teacher *getTeacher() { return this->teacher; }
+    Teacher *getTeacher() { return teacher; }
 
     /**
      * @brief Get la liste des élèves
      * 
      * @return std::vector<Student *> Liste des élèves
      */
-    std::vector<Student *> getStudents();
+    std::vector<Student *> getStudents(){ return students;}
 
     /**
      * @brief Ajoute un élève à la classe
      * 
      * @param student Elève
      */
-    void addStudent(Student & student);
+    void addStudent(Student * student){ students.push_back(student);}
 
     /**
      * @brief Retourne le nombre d'élève dans la classe
      * 
      * @return int nombre d'élève
      */
-    int size();
+    int size(){ return students.size(); }
 };
 
 #endif

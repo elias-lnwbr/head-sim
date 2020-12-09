@@ -1,6 +1,8 @@
 #ifndef SUBJECTH
 #define SUBJECTH
 
+#include <string>
+
 class Subject
 {
 
@@ -18,7 +20,7 @@ private:
     double coeff;
 
 public:
-    Subject() = delete;
+
     /**
      * @brief Construct une Matière
      * 
@@ -33,7 +35,7 @@ public:
      * 
      * @return std::string 
      */
-    std::string getName(){ return this->name;}
+    std::string getName(){ return name;}
 
     /**
      * @brief Set le nom de la matière
@@ -47,7 +49,7 @@ public:
      * 
      * @return double coefficient de la matière
      */
-    double getCoeff(){ return this->coeff;}
+    double getCoeff(){ return coeff;}
 
     /**
      * @brief Set le coefficient de la matière
