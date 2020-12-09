@@ -26,6 +26,7 @@ namespace ImGui
         IMGUI_SFML_API void Init(sf::RenderWindow& window, bool loadDefaultFont = true);
         IMGUI_SFML_API void Init(sf::Window& window, sf::RenderTarget& target, bool loadDefaultFont = true);
         IMGUI_SFML_API void Init(sf::Window& window, const sf::Vector2f& displaySize, bool loadDefaultFont = true);
+        IMGUI_SFML_API void Init(sf::Window& window, const sf::Vector2f& displaySize, bool loadDefaultFont, const char *filename, float size_pixels);
 
         IMGUI_SFML_API void ProcessEvent(const sf::Event& event);
 

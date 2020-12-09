@@ -1,6 +1,8 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
+#include "assert.h"
+
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
 #include <SFML/Window.hpp>

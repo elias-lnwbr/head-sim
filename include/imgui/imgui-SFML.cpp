@@ -198,6 +198,10 @@ void Init(sf::Window& window, sf::RenderTarget& target, bool loadDefaultFont) {
 }
 
 void Init(sf::Window& window, const sf::Vector2f& displaySize, bool loadDefaultFont) {
+    Init(window, displaySize, loadDefaultFont, NULL, 0);
+}
+
+void Init(sf::Window& window, const sf::Vector2f& displaySize, bool loadDefaultFont, const char *filename, float size_pixels) {
 #if __cplusplus < 201103L  // runtime assert when using earlier than C++11 as no
                            // static_assert support
     assert(
@@ -207,6 +211,9 @@ void Init(sf::Window& window, const sf::Vector2f& displaySize, bool loadDefaultF
 
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
+
+    if (filename)
+        io.Fonts->AddFontFromFileTTF(filename, size_pixels);
 
     // tell ImGui which features we support
     io.BackendFlags |= ImGuiBackendFlags_HasGamepad;

@@ -1,5 +1,7 @@
 #include "view/GameWindow.h"
 
+#define RESOURCES_FOLDER "resources/"
+
 GameWindow::GameWindow(unsigned int width, unsigned int height) :
 sf::RenderWindow(sf::VideoMode(width, height), "Headmaster Simulator",
                  sf::Style::Default, sf::ContextSettings(24, 0, 0, 4, 6)),
@@ -8,7 +10,8 @@ background(0.f, 0.f, 0.f)
     setVerticalSyncEnabled(true);
     resetGLStates();
 
-    ImGui::SFML::Init(*this);
+    ImGui::SFML::Init(*this, static_cast<sf::Vector2f>(getSize()), true,
+                      RESOURCES_FOLDER "fonts/Roboto-Light.ttf", 32.f);
 
     /* Activation de la fenêtre. */
     setActive(true);
