@@ -24,7 +24,7 @@ MainMenu::render() const
         if (ImGui::Button("Nouvelle partie"))
             Game::newGame();
         if (ImGui::Button("Quitter"))
-            Game::end();
+            Game::stop();
     }
     ImGui::End();
 }

@@ -13,7 +13,6 @@ class Game
 {
   private:
     static GameWindow *mainWindow;
-    static bool running;
     static std::vector<Component *> components;
 
   public:

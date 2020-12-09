@@ -15,7 +15,6 @@
 #include "view/MainView.h"
 
 GameWindow *Game::mainWindow = nullptr;
-bool Game::running = true;
 std::vector<Component *> Game::components = std::vector<Component *>();
 
 void
@@ -30,8 +29,8 @@ Game::start()
 void
 Game::loop(sf::Clock &clock)
 {
-    while (running) {
-        mainWindow->handleEvents(running);
+    while (mainWindow->isOpen()) {
+        mainWindow->handleEvents();
         ImGui::SFML::Update(*mainWindow, clock.restart());
         for (const Component *component : components)
             component->render();
@@ -69,7 +68,7 @@ Game::getMainWindow()
 void
 Game::stop()
 {
-    running = false;
+    mainWindow->close();
 }
 
 void

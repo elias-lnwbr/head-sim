@@ -23,7 +23,7 @@ GameWindow::GameWindow()
 }
 
 void
-GameWindow::handleEvents(bool &running)
+GameWindow::handleEvents()
 {
     sf::Event event;
 
@@ -31,7 +31,7 @@ GameWindow::handleEvents(bool &running)
         ImGui::SFML::ProcessEvent(event);
         if (event.type == sf::Event::Closed) {
             /* Stoppe le programme. */
-            running = false;
+            close();
         } else if (event.type == sf::Event::Resized) {
             /* Ajuste le viewport lorsque la fenêtre est redimensionnée. */
             glViewport(0, 0, event.size.width, event.size.height);

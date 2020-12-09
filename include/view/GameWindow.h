@@ -24,12 +24,8 @@ class GameWindow : public sf::RenderWindow
      */
     GameWindow();
 
-    /**
-     * Gestion des évènements.
-     *
-     * @param running
-     */
-    void handleEvents(bool &running);
+    /** @brief Gestion des évènements. */
+    void handleEvents();
 
     /**
      * Dessin et rendu.
