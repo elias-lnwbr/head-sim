@@ -3,8 +3,9 @@
 
 #include "Component.h"
 
-class MainMenu : public Component {
-public:
+class MainMenu : public Component
+{
+  public:
     void render() const;
 };
 

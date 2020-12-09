@@ -6,16 +6,16 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
 
-#include "imgui/imgui.h"
 #include "imgui/imgui-SFML.h"
+#include "imgui/imgui.h"
 
 #include "controller/Game.h"
 #include "view/GameWindow.h"
 #include "view/MainMenu.h"
 #include "view/MainView.h"
 
-GameWindow              *Game::mainWindow = nullptr;
-bool                     Game::running    = true;
+GameWindow *Game::mainWindow = nullptr;
+bool Game::running = true;
 std::vector<Component *> Game::components = std::vector<Component *>();
 
 void
@@ -83,7 +83,9 @@ void
 Game::removeComponent(Component *component)
 {
     assert(component);
-    components.erase(std::remove(components.begin(), components.end(), component), components.end());
+    components.erase(
+      std::remove(components.begin(), components.end(), component),
+      components.end());
     delete component;
 }
 

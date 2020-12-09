@@ -7,29 +7,30 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Window.hpp>
 
-#include "imgui/imgui.h"
 #include "imgui/imgui-SFML.h"
+#include "imgui/imgui.h"
 
 /**
  * @brief La fenêtre principale du jeu.
  */
-class GameWindow : public sf::RenderWindow {
-private:
+class GameWindow : public sf::RenderWindow
+{
+  private:
     sf::Color background;
 
-public:
+  public:
     /**
      * @brief Construit une fenêtre de jeu.
-     * 
-     * @param width 
-     * @param height 
+     *
+     * @param width
+     * @param height
      */
     GameWindow(unsigned int width, unsigned int height);
 
     /**
      * Gestion des évènements.
      *
-     * @param running 
+     * @param running
      */
     void handleEvents(bool &running);
 

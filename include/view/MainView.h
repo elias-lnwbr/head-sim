@@ -5,11 +5,12 @@
 
 #include "Component.h"
 
-class MainView : public Component {
-private:
+class MainView : public Component
+{
+  private:
     sf::Texture classroom;
 
-public:
+  public:
     MainView();
 
     void render() const;

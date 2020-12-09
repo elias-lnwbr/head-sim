@@ -1,0 +1,3 @@
+#!/bin/sh
+
+(./build.sh && ./build/head-sim) 1>/dev/null 2>&1 &

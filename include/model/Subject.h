@@ -6,24 +6,23 @@
 class Subject
 {
 
-private:
+  private:
     /**
      * @brief Nom de la matière
-     * 
+     *
      */
     std::string name;
-    
+
     /**
      * @brief Coefficient de la matière
-     * 
+     *
      */
     double coeff;
 
-public:
-
+  public:
     /**
      * @brief Construct une Matière
-     * 
+     *
      * @param name Nom de la Matière
      * @param coeff Coefficient de la matière
      */
@@ -32,32 +31,31 @@ public:
 
     /**
      * @brief Get le nom de la Matière
-     * 
-     * @return std::string 
+     *
+     * @return std::string
      */
-    std::string getName(){ return name;}
+    std::string getName() { return name; }
 
     /**
      * @brief Set le nom de la matière
-     * 
+     *
      * @param name Nom de la matière
      */
-    void setName(std::string name){ this->name;}
+    void setName(std::string name) { this->name; }
 
     /**
      * @brief Get le coefficient de la matière
-     * 
+     *
      * @return double coefficient de la matière
      */
-    double getCoeff(){ return coeff;}
+    double getCoeff() { return coeff; }
 
     /**
      * @brief Set le coefficient de la matière
-     * 
+     *
      * @param coeff coefficient de la matière
      */
-    void setCoeff(double coeff){ this->coeff = coeff;}
+    void setCoeff(double coeff) { this->coeff = coeff; }
 };
-
 
 #endif

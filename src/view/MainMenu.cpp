@@ -5,8 +5,8 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/System.hpp>
 
-#include "imgui/imgui.h"
 #include "imgui/imgui-SFML.h"
+#include "imgui/imgui.h"
 
 #include "controller/Game.h"
 #include "view/MainMenu.h"
@@ -18,7 +18,8 @@ MainMenu::render() const
 {
     centerNextWindow(320, 580);
     if (ImGui::Begin("Menu principal", nullptr, ImGuiWindowFlags_NoTitleBar |
-        ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
+                                                  ImGuiWindowFlags_NoResize |
+                                                  ImGuiWindowFlags_NoMove)) {
 
         if (ImGui::Button("Nouvelle partie"))
             Game::newGame();

@@ -6,14 +6,17 @@
 #include "view/Component.h"
 #include "view/GameWindow.h"
 
+#define RESOURCES_FOLDER "resources/"
+
 /** @brief Une classe "statique" ("singleton") modélisant le jeu. */
-class Game {
-private:
-    static GameWindow              *mainWindow;
-    static bool                     running;
+class Game
+{
+  private:
+    static GameWindow *mainWindow;
+    static bool running;
     static std::vector<Component *> components;
 
-public:
+  public:
     Game() = delete;
 
     /** @brief Démarre le jeu. */

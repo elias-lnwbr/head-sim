@@ -1,13 +1,12 @@
 #include "assert.h"
 
+#include "controller/Game.h"
 #include "view/GameWindow.h"
 
-#define RESOURCES_FOLDER "resources/"
-
-GameWindow::GameWindow(unsigned int width, unsigned int height) :
-sf::RenderWindow(sf::VideoMode(width, height), "Headmaster Simulator",
-                 sf::Style::Default),
-background(0.f, 0.f, 0.f)
+GameWindow::GameWindow(unsigned int width, unsigned int height)
+  : sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Headmaster Simulator",
+                     sf::Style::Default)
+  , background(0.f, 0.f, 0.f)
 {
     sf::Image icon;
     assert(icon.loadFromFile(RESOURCES_FOLDER "images/hms-logo-128.jpg"));
