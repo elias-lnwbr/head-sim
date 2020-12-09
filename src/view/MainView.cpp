@@ -19,13 +19,20 @@ MainView::MainView()
 void
 MainView::render() const
 {
-    centerNextWindow(700, 500);
-    if (ImGui::Begin("École", nullptr, ImGuiWindowFlags_NoTitleBar |
-                                         ImGuiWindowFlags_NoResize |
-                                         ImGuiWindowFlags_NoMove)) {
-        if (ImGui::Button("Démissionner"))
-            std::cout << "aled" << std::endl;
-        ImGui::Image(classroom);
+    maximizeNextWindow();
+    if (ImGui::Begin("École", nullptr, ImGuiWindowFlags_NoResize |
+                                       ImGuiWindowFlags_NoMove)) {
+        ImGui::Columns(2, NULL);
+        ImGui::Separator();
+        ImVec2 size(ImGui::GetIO().DisplaySize.x / 2.1, ImGui::GetIO().DisplaySize.y / 2.2);
+        for (int i = 0; i < 4; ++i) {
+            if (i > 0 && i % 2 == 0)
+                ImGui::Separator();
+            ImGui::ImageButton(classroom, size);
+            ImGui::NextColumn();
+        }
+        ImGui::Columns(1);
+        ImGui::Separator();
     }
     ImGui::End();
 }
