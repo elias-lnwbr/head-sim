@@ -1,3 +1,5 @@
+#include "assert.h"
+
 #include "view/GameWindow.h"
 
 #define RESOURCES_FOLDER "resources/"
@@ -7,6 +9,10 @@ sf::RenderWindow(sf::VideoMode(width, height), "Headmaster Simulator",
                  sf::Style::Default),
 background(0.f, 0.f, 0.f)
 {
+    sf::Image icon;
+    assert(icon.loadFromFile(RESOURCES_FOLDER "images/hms-logo-128.jpg"));
+    setIcon(128, 128, icon.getPixelsPtr());
+
     setVerticalSyncEnabled(true);
     resetGLStates();
 

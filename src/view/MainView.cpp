@@ -8,18 +8,15 @@
 #include "imgui/imgui-SFML.h"
 
 #include "controller/Game.h"
-#include "view/MainMenu.h"
 #include "view/MainView.h"
 
 void
-MainMenu::render()
+MainView::render()
 {
-    if (ImGui::Begin("Menu principal", nullptr, ImGuiWindowFlags_NoTitleBar |
+    if (ImGui::Begin("École", nullptr, ImGuiWindowFlags_NoTitleBar |
         ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
-        if (ImGui::Button("Nouvelle partie"))
-            Game::newGame();
-        if (ImGui::Button("Quitter"))
-            Game::end();
+        if (ImGui::Button("Démissionner"))
+            std::cout << "aled" << std::endl;
     }
     ImGui::End();
 }

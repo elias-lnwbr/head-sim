@@ -1,3 +1,5 @@
+#include "assert.h"
+
 #include <iostream>
 #include <string>
 
@@ -10,11 +12,12 @@
 #include "controller/Game.h"
 #include "view/GameWindow.h"
 #include "view/MainMenu.h"
+#include "view/MainView.h"
 
 GameWindow *Game::mainWindow = nullptr;
 
 void
-Game::newGame(sf::Clock &clock)
+Game::start(sf::Clock &clock)
 {
     /* Crée la fenêtre. */
     mainWindow = new GameWindow(800, 600);
@@ -34,7 +37,20 @@ Game::newGame(sf::Clock &clock)
 }
 
 void
+Game::newGame()
+{
+    MainView mainView;
+    mainView.render();
+}
+
+void
 Game::end()
 {
+    /*
+     * Il faut que la fenêtre aie été créée auparavant via la méthode
+     * Game::newGame.
+     */
+    assert(Game::mainWindow);
+
     delete Game::mainWindow;
 }

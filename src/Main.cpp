@@ -12,7 +12,7 @@ main()
     /* Démarre le chronomètre. */
     sf::Clock clock;
 
-    Game::newGame(clock);
+    Game::start(clock);
 
     return EXIT_SUCCESS;
 }

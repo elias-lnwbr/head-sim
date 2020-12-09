@@ -1,4 +1,4 @@
-![hms logo](hms-logo-128.png)
+![hms logo](resources/images/hms-logo-128.jpg)
 
 # Headmaster Simulator
 

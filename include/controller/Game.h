@@ -12,14 +12,16 @@ private:
 
 public:
     /**
-     * @brief Commence une nouvelle partie.
+     * @brief Démarre le jeu.
      * 
      * @param playerName le nom du joueur
      */
-    static void newGame(sf::Clock &clock);
+    static void start(sf::Clock &clock);
+
+    static void newGame();
 
     /**
-     * @brief End the Game
+     * @brief Termine le jeu.
      */
     static void end();
 
