@@ -19,8 +19,7 @@ class Actor : public Texturable
      * @param surname     le nom de famille du personnage
      * @param texturePath le chemin du fichier de texture
      */
-    Actor(const std::string &name,
-          const std::string &surname,
+    Actor(const std::string &name, const std::string &surname,
           const std::string &texturePath);
 
     /**

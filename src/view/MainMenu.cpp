@@ -17,10 +17,9 @@ void
 MainMenu::render() const
 {
     centerNextWindow(320, 580);
-    if (ImGui::Begin("Menu principal",
-                     nullptr,
-                     ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
-                       ImGuiWindowFlags_NoMove)) {
+    if (ImGui::Begin("Menu principal", nullptr, ImGuiWindowFlags_NoTitleBar |
+                                                  ImGuiWindowFlags_NoResize |
+                                                  ImGuiWindowFlags_NoMove)) {
 
         if (ImGui::Button("Nouvelle partie"))
             Game::newGame();

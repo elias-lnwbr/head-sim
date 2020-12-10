@@ -31,8 +31,7 @@ void
 School::render() const
 {
     maximizeNextWindow();
-    if (ImGui::Begin(name.c_str(),
-                     nullptr,
+    if (ImGui::Begin(name.c_str(), nullptr,
                      ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
         ImGui::Columns(2, NULL);
         ImGui::Separator();

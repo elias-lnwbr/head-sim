@@ -53,12 +53,8 @@ class Student : Actor
      * @param motivation Motivation de l'élève
      * @param skill Qualité de l'élève
      */
-    Student(std::string name,
-            std::string surname,
-            Classroom &classroom,
-            double mood,
-            double motivation,
-            double skill);
+    Student(std::string name, std::string surname, Classroom &classroom,
+            double mood, double motivation, double skill);
     ~Student();
 
     /**

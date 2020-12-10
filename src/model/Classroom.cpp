@@ -8,9 +8,8 @@
 void
 Classroom::render() const
 {
-    ImGui::ImageButton(texture,
-                       ImVec2(ImGui::GetIO().DisplaySize.x / 2.1,
-                              ImGui::GetIO().DisplaySize.y / 2.2));
+    ImGui::ImageButton(texture, ImVec2(ImGui::GetIO().DisplaySize.x / 2.1,
+                                       ImGui::GetIO().DisplaySize.y / 2.2));
 }
 
 Classroom::~Classroom()
