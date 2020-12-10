@@ -1,60 +1,55 @@
-#ifndef SUBJECTH
-#define SUBJECTH
+#ifndef SUBJECT_H
+#define SUBJECT_H
 
 #include <string>
 
+/**
+ * @brief Modélise une matière.
+ */
 class Subject {
-
   private:
-    /**
-     * @brief Nom de la matière
-     *
-     */
+    /** @brief Nom de la matière. */
     std::string name;
 
-    /**
-     * @brief Coefficient de la matière
-     *
-     */
+    /** @brief Coefficient de la matière. */
     double coeff;
 
   public:
     /**
-     * @brief Construct une Matière
+     * @brief Crée une matière.
      *
-     * @param name Nom de la Matière
-     * @param coeff Coefficient de la matière
+     * @param name  le nom de la matière
+     * @param coeff le coefficient de la matière
      */
-    Subject(std::string name, double coeff);
-    ~Subject();
+    Subject(const std::string &name, double coeff);
 
     /**
-     * @brief Get le nom de la Matière
+     * @brief Modifie le nom de la matière.
      *
-     * @return std::string
+     * @param name le nouveau nom de la matière
      */
-    std::string getName() { return name; }
+    void setName(const std::string &name) { this->name = name; }
 
     /**
-     * @brief Set le nom de la matière
+     * @brief Renvoie le nom de la matière.
      *
-     * @param name Nom de la matière
+     * @return le nom de la matière
      */
-    void setName(std::string name) { this->name; }
+    const std::string &getName() { return name; }
 
     /**
-     * @brief Get le coefficient de la matière
+     * @brief Modifie le coefficient de la matière.
      *
-     * @return double coefficient de la matière
-     */
-    double getCoeff() { return coeff; }
-
-    /**
-     * @brief Set le coefficient de la matière
-     *
-     * @param coeff coefficient de la matière
+     * @param coeff le nouveau coefficient de la matière
      */
     void setCoeff(double coeff) { this->coeff = coeff; }
+
+    /**
+     * @brief Renvoie le coefficient de la matière.
+     *
+     * @return le coefficient de la matière
+     */
+    double getCoeff() { return coeff; }
 };
 
-#endif
+#endif /* SUBJECT_H */

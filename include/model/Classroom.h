@@ -1,9 +1,10 @@
 #ifndef CLASS_H
 #define CLASS_H
 
-#include <iostream>
 #include <string>
 #include <vector>
+
+#include "imgui/imgui.h"
 
 #include "controller/Game.h"
 #include "view/Texturable.h"
@@ -13,7 +14,8 @@ class Teacher;
 
 class Classroom : public Texturable {
   private:
-    static const int MAX_SIZE = 50;  /**< taille maximum de la classe */
+    static const int MAX_SIZE = 50; /**< taille maximum de la classe */
+    static ImGuiID lastID;
     std::vector<Student *> students; /**< élèves de la classe */
     Teacher *teacher;                /**< enseignant de la classe */
 

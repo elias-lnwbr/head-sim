@@ -1,4 +1,5 @@
 /.vscode/
 /build/
+/include/SFML/
 /lib/
 imgui.ini

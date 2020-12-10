@@ -5,11 +5,20 @@
 #include "model/Student.h"
 #include "model/Teacher.h"
 
+ImGuiID Classroom::lastID = 0;
+
 void
 Classroom::render() const
 {
-    ImGui::ImageButton(texture, ImVec2(ImGui::GetIO().DisplaySize.x / 2.1,
-                                       ImGui::GetIO().DisplaySize.y / 2.2));
+    if (ImGui::BeginChild(++lastID,
+                          ImVec2(ImGui::GetIO().DisplaySize.x / 2.1,
+                                 ImGui::GetIO().DisplaySize.y / 2.2))) {
+        ImGui::Image(texture);
+        for (const Student *student : students) {
+            student->render();
+        }
+    }
+    ImGui::EndChild();
 }
 
 Classroom::~Classroom()

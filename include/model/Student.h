@@ -5,40 +5,24 @@
 #include <vector>
 
 #include "model/Actor.h"
+#include "model/Classroom.h"
+#include "model/Subject.h"
 
-class Subject;
-class Classroom;
-
-class Student : Actor {
+class Student : public Actor {
   private:
-    /**
-     * @brief Classe de l'élève
-     *
-     */
+    /** @brief Classe de l'élève */
     Classroom *classroom;
 
-    /**
-     * @brief Notes de l'élève
-     *
-     */
+    /** @brief Notes de l'élève */
     std::map<Subject *, std::vector<double>> grades;
 
-    /**
-     * @brief Humeur de l'élève
-     *
-     */
+    /** @brief Humeur de l'élève */
     double mood;
 
-    /**
-     * @brief Motivation de l'élève
-     *
-     */
+    /** @brief Motivation de l'élève */
     double motivation;
 
-    /**
-     * @brief Qualité de l'élève
-     *
-     */
+    /** @brief Qualité de l'élève */
     double skill;
 
   public:
