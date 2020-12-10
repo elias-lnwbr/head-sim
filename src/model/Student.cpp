@@ -16,15 +16,8 @@ Student::Student(const std::string &firstname, const std::string &surname,
 void
 Student::addGrades(Subject *subject, double grade)
 {
-    if (grades.count(subject) > 0) { // subject already in the map
+    if (grades.count(subject) > 0)
         grades.at(subject).push_back(grade);
-    } else {
-        std::vector<double> gr;
-        grades.emplace(subject, gr);
-    }
-}
-
-Student::~Student()
-{
-    // todo
+    else
+        grades.emplace(subject, std::vector<double>());
 }

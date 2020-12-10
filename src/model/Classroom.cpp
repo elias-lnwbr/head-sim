@@ -44,10 +44,13 @@ Classroom::render() const
           ImVec2(ImGui::GetWindowPos().x + ImGui::GetContentRegionAvail().x,
                  ImGui::GetWindowPos().y + ImGui::GetContentRegionAvail().y));
         ImGui::SameLine();
+        ImGui::Dummy(ImVec2(0., 120.));
         teacher->render();
+        ImGui::SameLine();
+        ImGui::Dummy(ImVec2(100., 20.));
         for (const Student *student : students) {
-            student->render();
             ImGui::SameLine();
+            student->render();
         }
     }
     ImGui::EndChild();

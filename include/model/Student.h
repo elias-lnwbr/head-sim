@@ -12,9 +12,6 @@ class Classroom;
 
 class Student : public Actor {
   private:
-    /** @brief Classe de l'élève */
-    Classroom *classroom;
-
     /** @brief Notes de l'élève */
     std::map<Subject *, std::vector<double>> grades;
 
@@ -39,21 +36,6 @@ class Student : public Actor {
      */
     Student(const std::string &firstname, const std::string &surname,
             double mood, double motivation, double skill);
-    ~Student();
-
-    /**
-     * @brief Retourne l'objet classroom
-     *
-     * @return Classroom  Classe de l'élève
-     */
-    Classroom *getClassroom() { return classroom; }
-
-    /**
-     * @brief Set l'objet classroom
-     *
-     * @param classroom Classe de l'élève
-     */
-    void setClassroom(Classroom *classroom) { this->classroom = classroom; }
 
     /**
      * @brief Get l'humeur de l'élève
