@@ -15,7 +15,8 @@ School::School(const std::string &name)
   : name(name)
 {
     for (int i = 1; i <= 4; ++i)
-        classrooms.push_back(new Classroom(i, new Teacher("H.", "Julien", 70, 40)));
+        classrooms.push_back(
+          new Classroom(i, new Teacher("H.", "Julien", 70, 40)));
 }
 
 School::~School()

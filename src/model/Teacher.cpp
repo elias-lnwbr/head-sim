@@ -8,4 +8,5 @@ Teacher::Teacher(const std::string &name, const std::string &surname,
   : Actor(name, surname, "resources/images/profs/prof1.png")
   , pedagogue(pedagogie)
   , meritocratic(meritocratic)
-{}
+{
+}
