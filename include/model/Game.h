@@ -3,8 +3,7 @@
 
 #include <string>
 
-class Game
-{
+class Game {
   private:
     /**
      * @brief Heure de début de la partie

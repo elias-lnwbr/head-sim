@@ -6,8 +6,7 @@
 
 #include "model/Actor.h"
 
-class Teacher : public Actor
-{
+class Teacher : public Actor {
   private:
     /**
      * @brief Niveau de pédagogie du prof

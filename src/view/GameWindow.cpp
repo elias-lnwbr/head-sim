@@ -1,6 +1,10 @@
 #include "assert.h"
 
-#include <iostream>
+#include <SFML/Graphics.hpp>
+#include <SFML/OpenGL.hpp>
+#include <SFML/Window.hpp>
+
+#include "imgui/imgui-SFML.h"
 
 #include "controller/Game.h"
 #include "view/GameWindow.h"
@@ -8,7 +12,7 @@
 GameWindow::GameWindow()
   : sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Headmaster Simulator",
                      sf::Style::Default)
-  , background(0.f, 0.f, 0.f)
+  , background(58, 110, 165)
 {
     sf::Image icon;
     assert(icon.loadFromFile(RESOURCES_FOLDER "images/hms-logo-128.jpg"));

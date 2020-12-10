@@ -8,8 +8,7 @@
 #include "model/School.h"
 #include "view/Component.h"
 
-class MainView : public Component
-{
+class MainView : public Component {
   private:
     const School *school;
 

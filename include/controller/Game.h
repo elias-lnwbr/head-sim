@@ -11,8 +11,7 @@
 #define RESOURCES_FOLDER "resources/"
 
 /** @brief Une classe "statique" ("singleton") modélisant le jeu. */
-class Game
-{
+class Game {
   private:
     static GameWindow *mainWindow;
     static std::vector<Component *> components;

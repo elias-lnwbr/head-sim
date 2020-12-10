@@ -4,12 +4,10 @@
 #include <string>
 #include <vector>
 
-#include "view/Texturable.h"
+#include "model/Classroom.h"
+#include "view/Component.h"
 
-class Classroom;
-
-class School : public Component
-{
+class School : public Component {
   private:
     /** @brief Nom de l'école */
     std::string name;

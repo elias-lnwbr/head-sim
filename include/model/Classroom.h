@@ -11,8 +11,7 @@
 class Student;
 class Teacher;
 
-class Classroom : public Texturable
-{
+class Classroom : public Texturable {
   private:
     static const int MAX_SIZE = 50;  /**< taille maximum de la classe */
     std::vector<Student *> students; /**< élèves de la classe */

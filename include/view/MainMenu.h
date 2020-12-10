@@ -3,8 +3,7 @@
 
 #include "Component.h"
 
-class MainMenu : public Component
-{
+class MainMenu : public Component {
   public:
     void render() const;
 };

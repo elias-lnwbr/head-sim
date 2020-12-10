@@ -7,8 +7,7 @@
 
 #include "view/Component.h"
 
-class Texturable : public Component
-{
+class Texturable : public Component {
   protected:
     std::string texturePath;
     sf::Texture texture;

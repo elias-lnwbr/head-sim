@@ -3,8 +3,7 @@
 
 #include <string>
 
-class Subject
-{
+class Subject {
 
   private:
     /**

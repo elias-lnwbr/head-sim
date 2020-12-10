@@ -5,8 +5,7 @@
 
 #include "view/Texturable.h"
 
-class Actor : public Texturable
-{
+class Actor : public Texturable {
   private:
     std::string name;
     std::string surname;

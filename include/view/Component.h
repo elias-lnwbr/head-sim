@@ -2,8 +2,7 @@
 #define COMPONENT_H
 
 /** @brief Une classe abstraite modélisant un composant graphique. */
-class Component
-{
+class Component {
   public:
     virtual ~Component(){};
     virtual void render() const = 0;

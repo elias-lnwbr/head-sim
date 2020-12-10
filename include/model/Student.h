@@ -9,8 +9,7 @@
 class Subject;
 class Classroom;
 
-class Student : Actor
-{
+class Student : Actor {
   private:
     /**
      * @brief Classe de l'élève
