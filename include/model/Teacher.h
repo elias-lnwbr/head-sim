@@ -30,8 +30,10 @@ class Teacher : public Actor
      * @param pedagogie Niveau de pédagogie du professeur
      * @param meritocratic Niveau de méritocratie du professeur
      */
-    Teacher(const std::string &name, const std::string &surname,
-            double pedagogie, double meritocratic);
+    Teacher(const std::string &name,
+            const std::string &surname,
+            double pedagogie,
+            double meritocratic);
 
     /**
      * @brief Get le niveau de pédagogie du professeur

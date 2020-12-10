@@ -13,8 +13,7 @@
 
 MainView::MainView()
   : school(new School("L'école infernale"))
-{
-}
+{}
 
 MainView::~MainView()
 {
