@@ -28,8 +28,7 @@ class Classroom : public Texturable
       : Texturable(RESOURCES_FOLDER "images/salles/salle" + std::to_string(n) +
                    ".png")
       , teacher(teacher)
-    {
-    }
+    {}
     ~Classroom();
 
     /**
