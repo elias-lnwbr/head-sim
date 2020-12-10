@@ -10,6 +10,7 @@
 #include "imgui/imgui.h"
 
 #include "controller/Game.h"
+#include "controller/StudentFactory.h"
 #include "view/GameWindow.h"
 #include "view/MainMenu.h"
 #include "view/MainView.h"
@@ -31,6 +32,7 @@ Game::newGame()
 {
     assert(mainWindow);
     clearComponents();
+    StudentFactory::loadStudentFactory();
     addComponent(new MainView);
 }
 

@@ -104,8 +104,6 @@ class Student : public Actor {
      * @param grade Note
      */
     void addGrades(Subject *subject, double grade);
-
-    void render() const;
 };
 
 #endif

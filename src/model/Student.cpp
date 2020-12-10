@@ -24,12 +24,6 @@ Student::addGrades(Subject *subject, double grade)
     }
 }
 
-void
-Student::render() const
-{
-    ImGui::ImageButton(texture);
-}
-
 Student::~Student()
 {
     // todo

@@ -6,20 +6,22 @@
 #include "imgui/imgui-SFML.h"
 #include "imgui/imgui.h"
 
+#include "controller/StudentFactory.h"
 #include "model/Classroom.h"
 #include "model/School.h"
 #include "model/Teacher.h"
 #include "view/Utils.h"
 
+#define NB_CLASSES 4
+
 School::School(const std::string &name)
   : name(name)
 {
-    Classroom *classroom;
-
-    for (int i = 1; i <= 4; ++i) {
-        classroom = new Classroom(i, new Teacher("H.", "Julien", 70, 40));
-        classroom->addStudent(new Student("de Noel", "Golden", 80, 70, 70));
-        classrooms.push_back(classroom);
+    for (int i = 1; i <= NB_CLASSES; ++i) {
+        Student *dummy = StudentFactory::getRandomStudent();
+        classrooms.push_back(new Classroom(
+          i, new Teacher(dummy->getFirstName(), dummy->getSurname(),
+                         dummy->getMotivation(), dummy->getSkill())));
     }
 }
 
@@ -35,8 +37,9 @@ void
 School::render() const
 {
     maximizeNextWindow();
-    if (ImGui::Begin(name.c_str(), nullptr,
-                     ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove)) {
+    if (ImGui::Begin(name.c_str(), nullptr, ImGuiWindowFlags_NoResize |
+                                              ImGuiWindowFlags_NoMove |
+                                              ImGuiWindowFlags_NoBackground)) {
         ImGui::Columns(2, NULL);
         ImGui::Separator();
         for (int i = 0; i < 4; ++i) {

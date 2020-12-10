@@ -40,6 +40,14 @@ class School : public Component {
      */
     void addClass(Classroom *classe) { classrooms.push_back(classe); }
 
+    /**
+     * @brief Get the Class From Index object
+     *
+     * @param index
+     * @return Classroom*
+     */
+    Classroom *getClassFromIndex(int index) { return classrooms[index]; }
+
     void render() const;
 };
 

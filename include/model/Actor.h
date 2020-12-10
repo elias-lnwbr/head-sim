@@ -51,6 +51,8 @@ class Actor : public Texturable {
      * @param surname nom de famille du personnage
      */
     void setSurname(const std::string &surname) { this->surname = surname; }
+
+    void render() const;
 };
 
 #endif
