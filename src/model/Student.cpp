@@ -5,7 +5,8 @@
 #include "model/Student.h"
 
 Student::Student(const std::string &firstname, const std::string &surname,
-                 double mood, double motivation, double skill, const std::string &texturePath)
+                 double mood, double motivation, double skill,
+                 const std::string &texturePath)
   : Actor(firstname, surname, texturePath)
   , mood(mood)
   , motivation(motivation)
