@@ -24,7 +24,12 @@ class Classroom : public Texturable
      *
      * @param teacher Professeur de la classe
      */
-    Classroom(int n, Teacher *teacher) : Texturable(RESOURCES_FOLDER "images/salles/salle" + std::to_string(n) + ".png"), teacher(teacher) {}
+    Classroom(int n, Teacher *teacher)
+      : Texturable(RESOURCES_FOLDER "images/salles/salle" + std::to_string(n) +
+                   ".png")
+      , teacher(teacher)
+    {
+    }
     ~Classroom();
 
     /**

@@ -18,8 +18,26 @@ GameWindow *Game::mainWindow = nullptr;
 std::vector<Component *> Game::components = std::vector<Component *>();
 
 void
+Game::play(sf::Clock &clock)
+{
+    start();
+    loop(clock);
+    end();
+}
+
+void
+Game::newGame()
+{
+    assert(mainWindow);
+    clearComponents();
+    addComponent(new MainView);
+}
+
+void
 Game::start()
 {
+    assert(!mainWindow);
+
     /* Crée la fenêtre. */
     mainWindow = new GameWindow;
 
@@ -29,6 +47,7 @@ Game::start()
 void
 Game::loop(sf::Clock &clock)
 {
+    assert(mainWindow);
     while (mainWindow->isOpen()) {
         mainWindow->handleEvents();
         ImGui::SFML::Update(*mainWindow, clock.restart());
@@ -40,22 +59,15 @@ Game::loop(sf::Clock &clock)
 }
 
 void
-Game::newGame()
-{
-    clearComponents();
-    addComponent(new MainView);
-}
-
-void
 Game::end()
 {
     /*
      * Il faut que la fenêtre aie été créée auparavant via la méthode
      * Game::newGame.
      */
-    assert(Game::mainWindow);
+    assert(mainWindow);
 
-    delete Game::mainWindow;
+    delete mainWindow;
     clearComponents();
 }
 

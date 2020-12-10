@@ -5,7 +5,7 @@
 class Component
 {
   public:
-    virtual ~Component() {};
+    virtual ~Component(){};
     virtual void render() const = 0;
 };
 

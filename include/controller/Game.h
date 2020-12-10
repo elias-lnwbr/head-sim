@@ -17,9 +17,6 @@ class Game
     static GameWindow *mainWindow;
     static std::vector<Component *> components;
 
-  public:
-    Game() = delete;
-
     /** @brief Démarre le jeu. */
     static void start();
 
@@ -30,11 +27,21 @@ class Game
      */
     static void loop(sf::Clock &clock);
 
-    /** @brief Débute une nouvelle partie. */
-    static void newGame();
-
     /** @brief Termine le jeu. */
     static void end();
+
+  public:
+    Game() = delete;
+
+    /**
+     * @brief Joue au jeu.
+     *
+     * @param clock le chronomètre du processus principal
+     */
+    static void play(sf::Clock &clock);
+
+    /** @brief Débute une nouvelle partie. */
+    static void newGame();
 
     /**
      * @brief Renvoie une référence vers la fenêtre principale.

@@ -11,9 +11,7 @@ main()
     /* Démarre le chronomètre. */
     sf::Clock clock;
 
-    Game::start();
-    Game::loop(clock);
-    Game::end();
+    Game::play(clock);
 
     exit(EXIT_SUCCESS);
     /* NOTREACHED */
