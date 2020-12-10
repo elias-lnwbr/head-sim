@@ -42,14 +42,15 @@ StudentFactory::loadStudentFactory()
     std::vector<std::string> studentline;
     while (ifs.good()) {
         studentline = getNextLineAndSplitIntoTokens(ifs);
-        if (studentline.size() == 6)
+        if (studentline.size() == 7)
             studentFactory.push_back(new Student(
               studentline[1], studentline[2], atof(studentline[3].c_str()),
-              atof(studentline[4].c_str()), atof(studentline[5].c_str())));
+              atof(studentline[4].c_str()), atof(studentline[5].c_str()), studentline[6].c_str()));
     }
     ifs.close();
 
-    auto rng = std::default_random_engine{};
+    auto rd = std::random_device{ };
+    auto rng = std::default_random_engine{ rd() };
     std::shuffle(std::begin(studentFactory), std::end(studentFactory), rng);
 }
 

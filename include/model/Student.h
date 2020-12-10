@@ -36,9 +36,10 @@ class Student : public Actor {
      * @param mood Humeur de l'élève
      * @param motivation Motivation de l'élève
      * @param skill Qualité de l'élève
+     * @param texturePath le chemin du fichier de texture
      */
     Student(const std::string &firstname, const std::string &surname,
-            double mood, double motivation, double skill);
+            double mood, double motivation, double skill, const std::string &texturePath);
     ~Student();
 
     /**
