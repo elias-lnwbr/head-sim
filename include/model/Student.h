@@ -8,6 +8,8 @@
 #include "model/Classroom.h"
 #include "model/Subject.h"
 
+class Classroom;
+
 class Student : public Actor {
   private:
     /** @brief Classe de l'élève */
@@ -31,13 +33,12 @@ class Student : public Actor {
      *
      * @param name prénom de l'élève
      * @param surname nom de famille de l'élève
-     * @param classroom Classe de l'élève
      * @param mood Humeur de l'élève
      * @param motivation Motivation de l'élève
      * @param skill Qualité de l'élève
      */
-    Student(std::string name, std::string surname, Classroom &classroom,
-            double mood, double motivation, double skill);
+    Student(const std::string &name, const std::string &surname, double mood,
+            double motivation, double skill);
     ~Student();
 
     /**
@@ -103,6 +104,8 @@ class Student : public Actor {
      * @param grade Note
      */
     void addGrades(Subject *subject, double grade);
+
+    void render() const;
 };
 
 #endif

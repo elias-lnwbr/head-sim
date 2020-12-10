@@ -1,5 +1,5 @@
-#ifndef CLASS_H
-#define CLASS_H
+#ifndef CLASSROOM_H
+#define CLASSROOM_H
 
 #include <string>
 #include <vector>
@@ -7,61 +7,74 @@
 #include "imgui/imgui.h"
 
 #include "controller/Game.h"
+#include "model/Student.h"
+#include "model/Teacher.h"
 #include "view/Texturable.h"
 
 class Student;
-class Teacher;
 
+/**
+ * @brief Modélise une salle de classe.
+ */
 class Classroom : public Texturable {
   private:
-    static const int MAX_SIZE = 50; /**< taille maximum de la classe */
+    /** @brief Taille maximum de la classe. */
+    static const int MAX_SIZE = 36;
+
     static ImGuiID lastID;
-    std::vector<Student *> students; /**< élèves de la classe */
-    Teacher *teacher;                /**< enseignant de la classe */
+
+    /** @brief Élèves de la classe. */
+    std::vector<Student *> students;
+
+    /** @brief Enseignant de la classe. */
+    const Teacher *teacher;
 
   public:
     /**
-     * @brief Construct a new Classroom object
+     * @brief Crée une salle de classe.
      *
-     * @param teacher Professeur de la classe
+     * @param n       l'identifiant de la salle de classe
+     * @param teacher un pointeur vers l'enseignant de la classe
      */
-    Classroom(int n, Teacher *teacher)
-      : Texturable(RESOURCES_FOLDER "images/salles/salle" + std::to_string(n) +
-                   ".png")
-      , teacher(teacher)
-    {
-    }
-    ~Classroom();
+    Classroom(int n, Teacher *teacher);
 
     /**
-     * @brief Get le professeur de la classe
+     * @brief Renvoie un pointeur vers l'enseignant de la classe.
      *
-     * @return Teacher*
+     * @return un pointeur vers l'enseignant de la classe
      */
-    Teacher *getTeacher() { return teacher; }
+    const Teacher *getTeacher() { return teacher; }
 
     /**
-     * @brief Get la liste des élèves
+     * @brief Ajoute un élève à la classe.
      *
-     * @return std::vector<Student *> Liste des élèves
-     */
-    std::vector<Student *> getStudents() { return students; }
-
-    /**
-     * @brief Ajoute un élève à la classe
-     *
-     * @param student Elève
+     * @param student un pointeur vers un élève
      */
     void addStudent(Student *student) { students.push_back(student); }
 
     /**
-     * @brief Retourne le nombre d'élève dans la classe
+     * @brief Renvoie la liste des élèves de la classe.
      *
-     * @return int nombre d'élève
+     * @return la liste des élèves de la classe
+     */
+    const std::vector<Student *> getStudents() { return students; }
+
+    /**
+     * @brief Renvoie le nombre d'élèves dans la classe.
+     *
+     * @return le nombre d'élèves dans la classe
      */
     int size() { return students.size(); }
 
+    /** @brief Effectue le rendu graphique. */
     void render() const;
+
+    /**
+     * @brief Détruit l'instance de la salle de classe.
+     *
+     * Cette fonction détruit également l'enseignant ainsi que tous les élèves.
+     */
+    ~Classroom();
 };
 
-#endif
+#endif /* CLASSROOM_H */

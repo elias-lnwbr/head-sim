@@ -14,6 +14,9 @@
 MainView::MainView()
   : school(new School("L'école infernale"))
 {
+    Classroom *g12 = new Classroom(1, new Teacher("H.", "Julien", 70, 40));
+    g12->addStudent(new Student("de Noel", "Golden", 80, 70, 70));
+    school->addClass(g12);
 }
 
 MainView::~MainView()

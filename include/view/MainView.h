@@ -10,7 +10,7 @@
 
 class MainView : public Component {
   private:
-    const School *school;
+    School *school;
 
   public:
     MainView();
