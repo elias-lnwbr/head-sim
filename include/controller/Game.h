@@ -5,6 +5,8 @@
 
 #include <SFML/System.hpp>
 
+#include "imgui/imgui.h"
+
 #include "view/Component.h"
 #include "view/GameWindow.h"
 
@@ -15,6 +17,7 @@ class Game {
   private:
     static GameWindow *mainWindow;
     static std::vector<Component *> components;
+    static ImGuiID componentID;
 
     /** @brief Démarre le jeu. */
     static void start();
@@ -28,6 +31,8 @@ class Game {
 
     /** @brief Termine le jeu. */
     static void end();
+
+    static void resetComponentID();
 
   public:
     Game() = delete;
@@ -68,6 +73,8 @@ class Game {
 
     /** @brief Supprime tous les composants graphiques du jeu. */
     static void clearComponents();
+
+    static ImGuiID getComponentID();
 };
 
 #endif /* GAME_H */

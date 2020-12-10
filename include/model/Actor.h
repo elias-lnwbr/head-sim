@@ -33,7 +33,10 @@ class Actor : public Texturable {
      *
      * @param name le nouveau prénom du personnage
      */
-    void setFirstName(const std::string &firstname) { this->firstname = firstname; }
+    void setFirstName(const std::string &firstname)
+    {
+        this->firstname = firstname;
+    }
 
     /**
      * @brief Renvoie le nom de famille du personnage

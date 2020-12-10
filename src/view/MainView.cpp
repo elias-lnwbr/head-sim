@@ -22,10 +22,8 @@ MainView::MainView()
 
     // ajout élèves
     StudentFactory::loadStudentFactory();
-    for(int i(0);i< NB_STUDENT;i++){
+    for (int i(0); i < NB_STUDENT; i++)
         g12->addStudent(StudentFactory::getRandomStudent());
-        std::cout << g12->getStudents().back()->getFirstName() << std::endl;
-    }
 }
 
 MainView::~MainView()

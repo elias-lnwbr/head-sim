@@ -14,9 +14,13 @@
 School::School(const std::string &name)
   : name(name)
 {
-    for (int i = 1; i <= 4; ++i)
-        classrooms.push_back(
-          new Classroom(i, new Teacher("H.", "Julien", 70, 40)));
+    Classroom *classroom;
+
+    for (int i = 1; i <= 4; ++i) {
+        classroom = new Classroom(i, new Teacher("H.", "Julien", 70, 40));
+        classroom->addStudent(new Student("de Noel", "Golden", 80, 70, 70));
+        classrooms.push_back(classroom);
+    }
 }
 
 School::~School()

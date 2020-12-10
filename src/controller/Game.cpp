@@ -16,6 +16,7 @@
 
 GameWindow *Game::mainWindow = nullptr;
 std::vector<Component *> Game::components = std::vector<Component *>();
+ImGuiID Game::componentID = 1;
 
 void
 Game::play(sf::Clock &clock)
@@ -49,6 +50,7 @@ Game::loop(sf::Clock &clock)
 {
     assert(mainWindow);
     while (mainWindow->isOpen()) {
+        resetComponentID();
         mainWindow->handleEvents();
         ImGui::SFML::Update(*mainWindow, clock.restart());
         for (const Component *component : components)
@@ -105,4 +107,16 @@ Game::clearComponents()
 {
     for (Component *component : components)
         removeComponent(component);
+}
+
+ImGuiID
+Game::getComponentID()
+{
+    return componentID++;
+}
+
+void
+Game::resetComponentID()
+{
+    componentID = 1;
 }

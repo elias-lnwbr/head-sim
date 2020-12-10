@@ -37,8 +37,8 @@ class Student : public Actor {
      * @param motivation Motivation de l'élève
      * @param skill Qualité de l'élève
      */
-    Student(const std::string &firstname, const std::string &surname, double mood,
-            double motivation, double skill);
+    Student(const std::string &firstname, const std::string &surname,
+            double mood, double motivation, double skill);
     ~Student();
 
     /**

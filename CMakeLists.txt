@@ -6,8 +6,9 @@ project(HeadmasterSimulator
         HOMEPAGE_URL "https://git.unistra.fr/barre-oblique-v3/t432_sab20_t3_b"
         LANGUAGES CXX)
 
-# specify the C++ standard
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+
+# specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
