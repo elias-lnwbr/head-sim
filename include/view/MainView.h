@@ -5,17 +5,17 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Component.h"
+#include "model/School.h"
+#include "view/Component.h"
 
 class MainView : public Component
 {
   private:
-    std::vector<sf::Texture *> classrooms;
+    const School *school;
 
   public:
     MainView();
     ~MainView();
-
     void render() const;
 };
 

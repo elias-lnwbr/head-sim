@@ -1,6 +1,9 @@
 #ifndef TEACHER_H
 #define TEACHER_H
 
+#include <iostream>
+#include <string>
+
 #include "model/Actor.h"
 
 class Teacher : Actor
@@ -27,9 +30,8 @@ class Teacher : Actor
      * @param pedagogie Niveau de pédagogie du professeur
      * @param meritocratic Niveau de méritocratie du professeur
      */
-    Teacher(std::string name, std::string surname, double pedagogie,
+    Teacher(const std::string &name, const std::string &surname, double pedagogie,
             double meritocratic);
-    ~Teacher();
 
     /**
      * @brief Get le niveau de pédagogie du professeur
@@ -60,6 +62,11 @@ class Teacher : Actor
     void setMeritocratic(double meritocratic)
     {
         this->meritocratic = meritocratic;
+    }
+
+    const std::string &getTexturePath() const override final {
+        std::cout << "about to return texturepath : " << texturePath << std::endl;
+        return texturePath;
     }
 };
 

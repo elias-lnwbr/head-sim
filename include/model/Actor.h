@@ -3,7 +3,9 @@
 
 #include <string>
 
-class Actor
+#include "view/Texturable.h"
+
+class Actor : public Texturable
 {
   private:
     std::string name;
@@ -16,8 +18,7 @@ class Actor
      * @param name    Prénom du personnage
      * @param surname Nom de famille du personnage
      */
-    Actor(const std::string &name, const std::string &surname);
-    ~Actor();
+    Actor(const std::string &name, const std::string &surname, const std::string &texturePath);
 
     /**
      * @brief Renvoie le prénom du personnage.

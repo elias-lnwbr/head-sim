@@ -4,47 +4,45 @@
 #include <string>
 #include <vector>
 
+#include "view/Texturable.h"
+
 class Classroom;
 
-class School
+class School : public Component
 {
   private:
-    /**
-     * @brief Nom de l'école
-     *
-     */
+    /** @brief Nom de l'école */
     std::string name;
 
-    /**
-     * @brief Classes dans l'école
-     *
-     */
-    std::vector<Classroom *> classes;
+    /** @brief Classes dans l'école */
+    std::vector<Classroom *> classrooms;
 
   public:
-    School() = delete;
-    School(std::string name);
+    School(const std::string &name);
     ~School();
+
     /**
      * @brief Set le nom de l'école
      *
      * @param name Nom de l'école
      */
-    void setName(const std::string &name) { this->name = name; };
+    void setName(const std::string &name) { this->name = name; }
 
     /**
      * @brief Get le nom de l'école
      *
      * @return std::string Nom de l'école
      */
-    std::string getName() { return this->name; };
+    std::string getName() { return this->name; }
 
     /**
      * @brief Ajoute une classe à l'école
      *
      * @param classe Classe à ajouter
      */
-    void addClass(Classroom *classe) { classes.push_back(classe); };
+    void addClass(Classroom *classe) { classrooms.push_back(classe); }
+
+    void render() const;
 };
 
 #endif
