@@ -7,18 +7,18 @@
 
 class Actor : public Texturable {
   private:
-    std::string name;
+    std::string firstname;
     std::string surname;
 
   public:
     /**
      * @brief Crée un personnage.
      *
-     * @param name        le prénom du personnage
+     * @param firstname        le prénom du personnage
      * @param surname     le nom de famille du personnage
      * @param texturePath le chemin du fichier de texture
      */
-    Actor(const std::string &name, const std::string &surname,
+    Actor(const std::string &firstname, const std::string &surname,
           const std::string &texturePath);
 
     /**
@@ -26,14 +26,14 @@ class Actor : public Texturable {
      *
      * @return std::string le prénom du personnage
      */
-    const std::string &getName() const { return name; }
+    const std::string &getFirstName() const { return firstname; }
 
     /**
      * @brief Modifie le prénom du personnage.
      *
      * @param name le nouveau prénom du personnage
      */
-    void setName(const std::string &name) { this->name = name; }
+    void setFirstName(const std::string &firstname) { this->firstname = firstname; }
 
     /**
      * @brief Renvoie le nom de famille du personnage

@@ -31,13 +31,13 @@ class Student : public Actor {
     /**
      * @brief Construct a new Student object
      *
-     * @param name prénom de l'élève
+     * @param firstname prénom de l'élève
      * @param surname nom de famille de l'élève
      * @param mood Humeur de l'élève
      * @param motivation Motivation de l'élève
      * @param skill Qualité de l'élève
      */
-    Student(const std::string &name, const std::string &surname, double mood,
+    Student(const std::string &firstname, const std::string &surname, double mood,
             double motivation, double skill);
     ~Student();
 

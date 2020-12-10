@@ -3,9 +3,9 @@
 #include "model/Actor.h"
 #include "model/Teacher.h"
 
-Teacher::Teacher(const std::string &name, const std::string &surname,
+Teacher::Teacher(const std::string &firstname, const std::string &surname,
                  double pedagogie, double meritocratic)
-  : Actor(name, surname, "resources/images/profs/prof1.png")
+  : Actor(firstname, surname, "resources/images/profs/prof1.png")
   , pedagogue(pedagogie)
   , meritocratic(meritocratic)
 {

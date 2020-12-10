@@ -4,9 +4,9 @@
 #include "model/Actor.h"
 #include "model/Student.h"
 
-Student::Student(const std::string &name, const std::string &surname,
+Student::Student(const std::string &firstname, const std::string &surname,
                  double mood, double motivation, double skill)
-  : Actor(name, surname, "resources/images/eleves/eleve_garcon1.png")
+  : Actor(firstname, surname, "resources/images/eleves/eleve_garcon1.png")
   , mood(mood)
   , motivation(motivation)
   , skill(skill)

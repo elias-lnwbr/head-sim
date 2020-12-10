@@ -24,12 +24,12 @@ class Teacher : public Actor {
     /**
      * @brief Construct un nouveau Professeur
      *
-     * @param name Prénom du professeur
+     * @param firstname Prénom du professeur
      * @param surname Nom de famille du professeur
      * @param pedagogie Niveau de pédagogie du professeur
      * @param meritocratic Niveau de méritocratie du professeur
      */
-    Teacher(const std::string &name, const std::string &surname,
+    Teacher(const std::string &firstname, const std::string &surname,
             double pedagogie, double meritocratic);
 
     /**
