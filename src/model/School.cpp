@@ -11,7 +11,8 @@
 #include "model/Teacher.h"
 #include "view/Utils.h"
 
-School::School(const std::string &name) : name(name)
+School::School(const std::string &name)
+  : name(name)
 {
     std::cout << "en train de créer une school" << std::endl;
     Teacher *teacher = new Teacher("H.", "Julien", 70, 40);

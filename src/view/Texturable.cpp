@@ -7,7 +7,9 @@
 
 #include "view/Texturable.h"
 
-Texturable::Texturable(const std::string &filename) : texturePath(filename), texture(sf::Texture())
+Texturable::Texturable(const std::string &filename)
+  : texturePath(filename)
+  , texture(sf::Texture())
 {
     std::cout << "About to load texture..." << std::endl;
     std::cout << "texturePath = \"" << texturePath << "\"" << std::endl;

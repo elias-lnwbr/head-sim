@@ -11,7 +11,8 @@
 #include "view/MainView.h"
 #include "view/Utils.h"
 
-MainView::MainView() : school(new School("L'école infernale"))
+MainView::MainView()
+  : school(new School("L'école infernale"))
 {
     std::cout << "créé la mainview" << std::endl;
 }
