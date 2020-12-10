@@ -13,10 +13,11 @@ class Actor : public Texturable
 
   public:
     /**
-     * Crée un personnage.
+     * @brief Crée un personnage.
      *
-     * @param name    Prénom du personnage
-     * @param surname Nom de famille du personnage
+     * @param name        le prénom du personnage
+     * @param surname     le nom de famille du personnage
+     * @param texturePath le chemin du fichier de texture
      */
     Actor(const std::string &name, const std::string &surname, const std::string &texturePath);
 

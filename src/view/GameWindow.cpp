@@ -1,5 +1,7 @@
 #include "assert.h"
 
+#include <iostream>
+
 #include "controller/Game.h"
 #include "view/GameWindow.h"
 

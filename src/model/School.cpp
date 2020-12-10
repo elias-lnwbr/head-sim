@@ -14,12 +14,8 @@
 School::School(const std::string &name)
   : name(name)
 {
-    std::cout << "en train de créer une school" << std::endl;
-    Teacher *teacher = new Teacher("H.", "Julien", 70, 40);
-    std::cout << "créé H" << std::endl;
     for (int i = 1; i <= 4; ++i)
-        classrooms.push_back(new Classroom(i, teacher));
-    std::cout << "créé une school" << std::endl;
+        classrooms.push_back(new Classroom(i, new Teacher("H.", "Julien", 70, 40)));
 }
 
 School::~School()

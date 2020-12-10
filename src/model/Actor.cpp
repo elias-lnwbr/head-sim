@@ -7,6 +7,4 @@ Actor::Actor(const std::string &name, const std::string &surname,
   : Texturable(texturePath)
   , name(name)
   , surname(surname)
-{
-    std::cout << "créé un actor" << std::endl;
-}
+{}

@@ -1,4 +1,5 @@
-#include <SFML/Graphics.hpp>
+#include <stdlib.h>
+
 #include <SFML/System.hpp>
 
 #include "controller/Game.h"

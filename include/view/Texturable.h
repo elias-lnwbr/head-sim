@@ -5,7 +5,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "controller/Game.h"
 #include "view/Component.h"
 
 class Texturable : public Component {
@@ -16,7 +15,6 @@ class Texturable : public Component {
   public:
     Texturable(const std::string &filename);
     virtual void render() const;
-    virtual const std::string &getTexturePath() const;
 };
 
 #endif /* TEXTURABLE_H */

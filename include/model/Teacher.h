@@ -6,7 +6,7 @@
 
 #include "model/Actor.h"
 
-class Teacher : Actor
+class Teacher : public Actor
 {
   private:
     /**
@@ -62,11 +62,6 @@ class Teacher : Actor
     void setMeritocratic(double meritocratic)
     {
         this->meritocratic = meritocratic;
-    }
-
-    const std::string &getTexturePath() const override final {
-        std::cout << "about to return texturepath : " << texturePath << std::endl;
-        return texturePath;
     }
 };
 

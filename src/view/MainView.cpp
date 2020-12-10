@@ -13,9 +13,7 @@
 
 MainView::MainView()
   : school(new School("L'école infernale"))
-{
-    std::cout << "créé la mainview" << std::endl;
-}
+{}
 
 MainView::~MainView()
 {

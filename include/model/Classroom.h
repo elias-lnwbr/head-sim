@@ -24,9 +24,7 @@ class Classroom : public Texturable
      *
      * @param teacher Professeur de la classe
      */
-    Classroom(int n, Teacher *teacher) : Texturable(RESOURCES_FOLDER "images/salles/salle" + std::to_string(n) + ".png"), teacher(teacher) {
-      std::cout << "créé une classroom" << std::endl;
-    }
+    Classroom(int n, Teacher *teacher) : Texturable(RESOURCES_FOLDER "images/salles/salle" + std::to_string(n) + ".png"), teacher(teacher) {}
     ~Classroom();
 
     /**
@@ -58,10 +56,6 @@ class Classroom : public Texturable
     int size() { return students.size(); }
 
     void render() const;
-
-    const std::string &getTexturePath() const override final {
-        return texturePath;
-    }
 };
 
 #endif
