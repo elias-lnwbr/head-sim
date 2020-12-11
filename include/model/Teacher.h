@@ -37,7 +37,7 @@ class Teacher : public Actor {
      *
      * @return double Niveau de pédagogie du professeur
      */
-    double getPedagogue() { return pedagogue; }
+    double getPedagogue() const { return pedagogue; }
 
     /**
      * @brief Set le niveau de pédagogie du professeur
@@ -51,7 +51,7 @@ class Teacher : public Actor {
      *
      * @return double
      */
-    double getMeritocratic() { return meritocratic; }
+    double getMeritocratic() const{ return meritocratic; }
 
     /**
      * @brief Set le niveau de méritocratie du professeur

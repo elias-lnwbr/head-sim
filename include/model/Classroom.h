@@ -75,6 +75,11 @@ class Classroom : public Texturable {
      * Cette fonction détruit également l'enseignant ainsi que tous les élèves.
      */
     ~Classroom();
+
+    /**
+     * @brief ajoute des notes aux élèves lors d'un clic sur le bouton examen
+     */
+    void examen() const;
 };
 
 #endif /* CLASSROOM_H */

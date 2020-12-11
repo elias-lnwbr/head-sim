@@ -10,6 +10,7 @@
 #include "model/Classroom.h"
 #include "model/Student.h"
 #include "model/Teacher.h"
+#include "model/Subject.h"
 
 #define NB_STUDENTS 5
 
@@ -43,7 +44,10 @@ Classroom::render() const
           ImGui::GetWindowPos(),
           ImVec2(ImGui::GetWindowPos().x + ImGui::GetContentRegionAvail().x,
                  ImGui::GetWindowPos().y + ImGui::GetContentRegionAvail().y));
-        ImGui::Button("Examen");
+        if (ImGui::Button("Examen"))
+        {
+            examen();
+        }
         ImGui::SameLine();
         ImGui::Dummy(ImVec2(0., 120.));
         teacher->render();
@@ -64,4 +68,16 @@ Classroom::~Classroom()
         students.pop_back();
     }
     delete teacher;
+}
+
+void
+Classroom::examen() const
+{
+    double grade;
+    for (Student *s : students)
+    {
+        grade = (teacher->getMeritocratic() * s->getSkill()) / 10 + (teacher->getPedagogue() * s->getMotivation()) / 10; //note sur 20 en fonction du skill et de la motivation de l'élève et du type d'enseignement du prof
+        grade += s->getMood() * 0.2; // entre 0 et 2 points bonus en fonction du mood de l'élève
+        s->addGrades(new Subject("Maths", 2), grade);
+    }
 }
