@@ -35,10 +35,12 @@ Student::clickPopup()
         infoSheet();
     }
     if (ImGui::MenuItem("Interroger")) {
+        if(getMotivation() <=9.f)
+            setMotivation(getMotivation()+1.f);
     }
     if (ImGui::MenuItem("Lancer une craie")) {
-    }
-    if (ImGui::MenuItem("Envoyer au coin")) {
+        if(getMotivation() >= 1.f)
+            setMotivation(getMotivation()-1.f);
     }
 }
 
@@ -53,7 +55,7 @@ Student::moyenneGenerale() const
 {
     if(grades.empty())
         return -1;
-        
+
     double res = 0;
     double sommeCoeff = 0;
     for (const auto &kv : grades) {
