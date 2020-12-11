@@ -18,7 +18,7 @@ InfoSheet::render()
     if (ImGui::Begin("Fiche d'info", nullptr, ImGuiWindowFlags_NoMove)) {
         ImGui::LabelText("Satisfaction", "I can't get no");
         ImGui::LabelText("Humeur", "jsp");
-        ImGui::LabelText("Moyenne générale", "20/20");
+        ImGui::LabelText("Moyenne générale", "%lf", student->moyenneGenerale());
         if (ImGui::Button("Revenir"))
             Game::removeComponent(this);
     }

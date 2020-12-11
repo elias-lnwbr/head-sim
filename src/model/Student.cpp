@@ -22,12 +22,14 @@ Student::addGrades(Subject *subject, double grade)
 {
     if (grades.count(subject) > 0)
         grades.at(subject).push_back(grade);
-    else
+    else {
         grades.emplace(subject, std::vector<double>());
+        addGrades(subject, grade);
+    }
 }
 
 void
-Student::clickPopup() const
+Student::clickPopup()
 {
     if (ImGui::MenuItem("Afficher fiche information")) {
         infoSheet();
@@ -41,9 +43,9 @@ Student::clickPopup() const
 }
 
 void
-Student::infoSheet() const
+Student::infoSheet()
 {
-    Game::addComponent(new InfoSheet);
+    Game::addComponent(new InfoSheet(this));
 }
 
 double
@@ -63,7 +65,7 @@ Student::moyenneMatiere(Subject *subject) const
 {
     assert(grades.count(subject) > 0);
 
-    double moyMatiere;
+    double moyMatiere = 0;
 
     const std::vector<double> &notes = grades.at(subject);
     std::vector<double>::size_type vecsize = notes.size();

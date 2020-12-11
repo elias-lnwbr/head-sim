@@ -23,15 +23,14 @@ Teacher::Teacher(const std::string &firstname, const std::string &surname,
 }
 
 void
-Teacher::clickPopup() const
+Teacher::clickPopup()
 {
-    if (ImGui::MenuItem("Afficher fiche information")) {
+    if (ImGui::MenuItem("Afficher fiche information"))
         infoSheet();
-    }
 }
 
 void
-Teacher::infoSheet() const
+Teacher::infoSheet()
 {
     // TODO
 }

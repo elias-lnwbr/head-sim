@@ -59,13 +59,13 @@ class Actor : public Texturable {
      * @brief affiche la fiche d'information de l'Actor
      *
      */
-    virtual void infoSheet() const = 0;
+    virtual void infoSheet() = 0;
 
     /**
      * @brief affiche les options disponibles lorsque l'on clique sur l'Actor
      *
      */
-    virtual void clickPopup() const = 0;
+    virtual void clickPopup() = 0;
 };
 
 #endif

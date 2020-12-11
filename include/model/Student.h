@@ -93,13 +93,13 @@ class Student : public Actor {
      * @brief Affiche la fiche information de l'élève
      *
      */
-    void infoSheet() const override;
+    void infoSheet() override;
 
     /**
      * @brief  Affiche les options disponibles lorsque l'on clique sur l'élève
      *
      */
-    void clickPopup() const override;
+    void clickPopup() override;
 
     /**
      * @brief calcule la moyenne générale de l'élève
