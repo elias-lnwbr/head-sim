@@ -64,14 +64,12 @@ class Teacher : public Actor {
     }
 
     /**
-     * @brief Affiche la fiche informations du prof
-     * 
+     * @brief Affiche la fiche informations du prof.
      */
     void infoSheet() const override;
 
     /**
-     * @brief  Affiche les options disponibles lorsque l'on clique sur le prof
-     * 
+     * @brief  Affiche les options disponibles lorsque l'on clique sur le prof.
      */
     void clickPopup() const override;
 };

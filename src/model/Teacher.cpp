@@ -1,4 +1,5 @@
 #include <string>
+
 #include "imgui/imgui-SFML.h"
 #include "imgui/imgui.h"
 
@@ -22,14 +23,15 @@ Teacher::Teacher(const std::string &firstname, const std::string &surname,
 }
 
 void
-Teacher::clickPopup() const{
+Teacher::clickPopup() const
+{
     if (ImGui::MenuItem("Afficher fiche information")) {
         infoSheet();
     }
-    
 }
 
 void
-Teacher::infoSheet() const{
+Teacher::infoSheet() const
+{
     // TODO
 }

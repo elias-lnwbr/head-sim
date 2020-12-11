@@ -14,15 +14,14 @@ class Actor : public Texturable {
     /**
        * @brief Crée un personnage.
        *
-       * @param firstname        le prénom du personnage
+       * @param firstname   le prénom du personnage
        * @param surname     le nom de famille du personnage
        * @param texturePath le chemin du fichier de texture
        */
-      Actor(const std::string &firstname, const std::string &surname,
-            const std::string &texturePath);
+    Actor(const std::string &firstname, const std::string &surname,
+          const std::string &texturePath);
 
   public:
-    
     /**
      * @brief Renvoie le prénom du personnage.
      *
@@ -58,13 +57,13 @@ class Actor : public Texturable {
 
     /**
      * @brief affiche la fiche d'information de l'Actor
-     * 
+     *
      */
     virtual void infoSheet() const = 0;
 
     /**
      * @brief affiche les options disponibles lorsque l'on clique sur l'Actor
-     * 
+     *
      */
     virtual void clickPopup() const = 0;
 };
