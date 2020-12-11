@@ -51,7 +51,7 @@ class Teacher : public Actor {
      *
      * @return double
      */
-    double getMeritocratic() const{ return meritocratic; }
+    double getMeritocratic() const { return meritocratic; }
 
     /**
      * @brief Set le niveau de méritocratie du professeur
