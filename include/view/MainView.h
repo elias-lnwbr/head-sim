@@ -15,7 +15,7 @@ class MainView : public Component {
   public:
     MainView();
     ~MainView();
-    void render() const;
+    void render();
 };
 
 #endif /* MAINVIEW_H */

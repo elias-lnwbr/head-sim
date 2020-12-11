@@ -6,7 +6,7 @@
 /** @brief Une fiche d'information d'un personnage. */
 class InfoSheet : public Component {
   public:
-    void render() const;
+    void render();
 };
 
 #endif /* INFO_SHEET_H */

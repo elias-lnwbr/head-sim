@@ -14,7 +14,7 @@
 #include "view/Utils.h"
 
 void
-MainMenu::render() const
+MainMenu::render()
 {
     centerNextWindow(320, 580);
     if (ImGui::Begin("Menu principal", nullptr, ImGuiWindowFlags_NoTitleBar |

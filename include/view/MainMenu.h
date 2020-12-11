@@ -5,7 +5,7 @@
 
 class MainMenu : public Component {
   public:
-    void render() const;
+    void render();
 };
 
 #endif /* MAINMENU_H */

@@ -48,7 +48,7 @@ class School : public Component {
      */
     Classroom *getClassFromIndex(int index) { return classrooms[index]; }
 
-    void render() const;
+    void render();
 };
 
 #endif

@@ -21,7 +21,11 @@ class Subject {
      * @param name  le nom de la matière
      * @param coeff le coefficient de la matière
      */
-    Subject(const std::string &name, double coeff) : name(name), coeff(coeff) {}
+    Subject(const std::string &name, double coeff)
+      : name(name)
+      , coeff(coeff)
+    {
+    }
 
     /**
      * @brief Modifie le nom de la matière.

@@ -55,7 +55,7 @@ Game::loop(sf::Clock &clock)
         resetComponentID();
         mainWindow->handleEvents();
         ImGui::SFML::Update(*mainWindow, clock.restart());
-        for (const Component *component : components)
+        for (Component *component : components)
             component->render();
         mainWindow->draw();
         mainWindow->display();
@@ -91,7 +91,9 @@ void
 Game::addComponent(Component *component)
 {
     assert(component);
-    components.push_back(component);
+    if (std::find(components.begin(), components.end(), component) ==
+        components.end())
+        components.push_back(component);
 }
 
 void

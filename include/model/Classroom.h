@@ -27,7 +27,7 @@ class Classroom : public Texturable {
     std::vector<Student *> students;
 
     /** @brief Enseignant de la classe. */
-    const Teacher *teacher;
+    Teacher *teacher;
 
   public:
     /**
@@ -67,7 +67,7 @@ class Classroom : public Texturable {
     int size() { return students.size(); }
 
     /** @brief Effectue le rendu graphique. */
-    void render() const;
+    void render();
 
     /**
      * @brief Détruit l'instance de la salle de classe.

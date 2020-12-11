@@ -34,7 +34,7 @@ School::~School()
 }
 
 void
-School::render() const
+School::render()
 {
     maximizeNextWindow();
     if (ImGui::Begin(name.c_str(), nullptr, ImGuiWindowFlags_NoResize |

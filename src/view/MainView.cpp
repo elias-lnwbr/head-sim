@@ -23,7 +23,7 @@ MainView::~MainView()
 }
 
 void
-MainView::render() const
+MainView::render()
 {
     school->render();
 }

@@ -17,7 +17,7 @@ Actor::Actor(const std::string &firstname, const std::string &surname,
 }
 
 void
-Actor::render() const
+Actor::render()
 {
     const char *str_id = std::to_string(Game::getComponentID()).c_str();
 

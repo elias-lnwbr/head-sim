@@ -33,7 +33,7 @@ Classroom::Classroom(int n, Teacher *teacher)
 }
 
 void
-Classroom::render() const
+Classroom::render()
 {
     ImVec2 size(ImGui::GetIO().DisplaySize.x / 2.25,
                 ImGui::GetIO().DisplaySize.y / 2.25);
@@ -52,7 +52,7 @@ Classroom::render() const
         teacher->render();
         ImGui::SameLine();
         ImGui::Dummy(ImVec2(100., 20.));
-        for (const Student *student : students) {
+        for (Student *student : students) {
             ImGui::SameLine();
             student->render();
         }

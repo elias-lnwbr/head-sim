@@ -53,7 +53,7 @@ class Actor : public Texturable {
      */
     void setSurname(const std::string &surname) { this->surname = surname; }
 
-    void render() const;
+    void render();
 
     /**
      * @brief affiche la fiche d'information de l'Actor

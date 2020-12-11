@@ -12,13 +12,15 @@
 #include "view/Utils.h"
 
 void
-InfoSheet::render() const
+InfoSheet::render()
 {
     centerNextWindow(500, 320);
     if (ImGui::Begin("Fiche d'info", nullptr, ImGuiWindowFlags_NoMove)) {
         ImGui::LabelText("Satisfaction", "I can't get no");
         ImGui::LabelText("Humeur", "jsp");
         ImGui::LabelText("Moyenne générale", "20/20");
+        if (ImGui::Button("Revenir"))
+            Game::removeComponent(this);
     }
     ImGui::End();
 }
