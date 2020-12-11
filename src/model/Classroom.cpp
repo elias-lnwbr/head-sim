@@ -81,6 +81,6 @@ Classroom::examen() const
         grade +=
           s->getMood() *
           0.2; // entre 0 et 2 points bonus en fonction du mood de l'élève
-        s->addGrades(new Subject("Maths", 2.), grade);
+        s->addGrades(Subject::getMaths(), grade);
     }
 }

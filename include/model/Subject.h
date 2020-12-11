@@ -14,6 +14,8 @@ class Subject {
     /** @brief Coefficient de la matière. */
     double coeff;
 
+    static Subject maths;
+
   public:
     /**
      * @brief Crée une matière.
@@ -54,6 +56,8 @@ class Subject {
      * @return le coefficient de la matière
      */
     double getCoeff() { return coeff; }
+
+    static Subject *getMaths() { return &maths; }
 };
 
 #endif /* SUBJECT_H */

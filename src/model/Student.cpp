@@ -35,12 +35,12 @@ Student::clickPopup()
         infoSheet();
     }
     if (ImGui::MenuItem("Interroger")) {
-        if(getMotivation() <=9.f)
-            setMotivation(getMotivation()+1.f);
+        if (getMotivation() <= 9.f)
+            setMotivation(getMotivation() + 1.f);
     }
     if (ImGui::MenuItem("Lancer une craie")) {
-        if(getMotivation() >= 1.f)
-            setMotivation(getMotivation()-1.f);
+        if (getMotivation() >= 1.f)
+            setMotivation(getMotivation() - 1.f);
     }
 }
 
@@ -53,7 +53,7 @@ Student::infoSheet()
 double
 Student::moyenneGenerale() const
 {
-    if(grades.empty())
+    if (grades.empty())
         return -1;
 
     double res = 0;
