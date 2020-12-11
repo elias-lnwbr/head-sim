@@ -51,6 +51,9 @@ Student::infoSheet()
 double
 Student::moyenneGenerale() const
 {
+    if(grades.empty())
+        return -1;
+        
     double res = 0;
     double sommeCoeff = 0;
     for (const auto &kv : grades) {
