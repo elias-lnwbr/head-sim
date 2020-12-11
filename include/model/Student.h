@@ -101,6 +101,21 @@ class Student : public Actor {
      */
     void clickPopup() const override;
 
+    /**
+     * @brief calcule la moyenne générale de l'élève
+     * 
+     * @return double moyenne générale de l'élève
+     */
+    double moyenneGenerale() const;
+
+    /**
+     * @brief cacule la moyenne d'une matière d'un élève
+     * 
+     * @param subject matière concerné
+     * @return double moyenne d'une matière
+     */
+    double moyenneMatiere(Subject * subject) const;
+
 };
 
 #endif
