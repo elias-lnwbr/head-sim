@@ -13,6 +13,14 @@
 
 #define NB_STUDENTS 5
 
+static ImTextureID
+convertGLTextureHandleToImTextureID(GLuint glTextureHandle)
+{
+    ImTextureID textureID = (ImTextureID)NULL;
+    std::memcpy(&textureID, &glTextureHandle, sizeof(GLuint));
+    return textureID;
+}
+
 ImGuiID Classroom::lastID = 0;
 
 Classroom::Classroom(int n, Teacher *teacher)
@@ -21,14 +29,6 @@ Classroom::Classroom(int n, Teacher *teacher)
 {
     for (int i = 1; i <= NB_STUDENTS; ++i)
         addStudent(StudentFactory::getRandomStudent());
-}
-
-ImTextureID
-convertGLTextureHandleToImTextureID(GLuint glTextureHandle)
-{
-    ImTextureID textureID = (ImTextureID)NULL;
-    std::memcpy(&textureID, &glTextureHandle, sizeof(GLuint));
-    return textureID;
 }
 
 void
@@ -43,6 +43,7 @@ Classroom::render() const
           ImGui::GetWindowPos(),
           ImVec2(ImGui::GetWindowPos().x + ImGui::GetContentRegionAvail().x,
                  ImGui::GetWindowPos().y + ImGui::GetContentRegionAvail().y));
+        ImGui::Button("Examen");
         ImGui::SameLine();
         ImGui::Dummy(ImVec2(0., 120.));
         teacher->render();
