@@ -62,6 +62,18 @@ class Teacher : public Actor {
     {
         this->meritocratic = meritocratic;
     }
+
+    /**
+     * @brief Affiche la fiche informations du prof
+     * 
+     */
+    void infoSheet() const override;
+
+    /**
+     * @brief  Affiche les options disponibles lorsque l'on clique sur le prof
+     * 
+     */
+    void clickPopup() const override;
 };
 
 #endif

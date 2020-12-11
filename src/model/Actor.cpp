@@ -25,14 +25,7 @@ Actor::render() const
           texture, ImVec2(texture.getSize().x / 2, texture.getSize().y / 2)))
         ImGui::OpenPopup(str_id);
     if (ImGui::BeginPopup(str_id)) {
-        if (ImGui::MenuItem("Afficher fiche information")) {
-        }
-        if (ImGui::MenuItem("Interroger")) {
-        }
-        if (ImGui::MenuItem("Lancer une craie")) {
-        }
-        if (ImGui::MenuItem("Envoyer au coin")) {
-        }
+        clickPopup();
         ImGui::EndPopup();
     }
 }

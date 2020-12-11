@@ -22,3 +22,24 @@ Student::addGrades(Subject *subject, double grade)
     else
         grades.emplace(subject, std::vector<double>());
 }
+
+void
+Student::clickPopup() const{
+    if (ImGui::MenuItem("Afficher fiche information")) {
+        infoSheet();
+    }
+    if (ImGui::MenuItem("Interroger")) {
+
+    }
+    if (ImGui::MenuItem("Lancer une craie")) {
+
+    }
+    if (ImGui::MenuItem("Envoyer au coin")) {
+
+    }
+}
+
+void
+Student::infoSheet() const{
+    // TODO
+}

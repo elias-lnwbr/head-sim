@@ -88,6 +88,19 @@ class Student : public Actor {
      * @param grade Note
      */
     void addGrades(Subject *subject, double grade);
+
+    /**
+     * @brief Affiche la fiche information de l'élève
+     * 
+     */
+    void infoSheet() const override;
+
+    /**
+     * @brief  Affiche les options disponibles lorsque l'on clique sur l'élève
+     * 
+     */
+    void clickPopup() const override;
+
 };
 
 #endif

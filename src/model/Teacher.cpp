@@ -1,4 +1,6 @@
 #include <string>
+#include "imgui/imgui-SFML.h"
+#include "imgui/imgui.h"
 
 #include "model/Actor.h"
 #include "model/Teacher.h"
@@ -17,4 +19,17 @@ Teacher::Teacher(const std::string &firstname, const std::string &surname,
   , pedagogue(pedagogie)
   , meritocratic(meritocratic)
 {
+}
+
+void
+Teacher::clickPopup() const{
+    if (ImGui::MenuItem("Afficher fiche information")) {
+        infoSheet();
+    }
+    
+}
+
+void
+Teacher::infoSheet() const{
+    // TODO
 }
